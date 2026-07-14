@@ -1,0 +1,35 @@
+# Deployment
+
+## Vercel (recommended)
+
+1. In the Vercel dashboard, **Add New → Project → Import Git Repository**
+   and select this repo.
+2. Vercel auto-detects Next.js via `vercel.json` — no build settings to
+   change.
+3. Every push to a non-default branch (or every pull request) gets its own
+   **Preview Deployment** URL automatically. Pushes to `main` deploy to
+   **Production** automatically.
+4. No environment variables are required — the template has no backend.
+
+## Netlify
+
+1. **Add new site → Import an existing project** and select this repo.
+2. `netlify.toml` is already configured with `@netlify/plugin-nextjs`, which
+   gives full SSR support (not just static export).
+3. Netlify creates **Deploy Previews** for pull requests and a **Production**
+   deploy from `main` the same way Vercel does.
+
+## Custom domain
+
+Both platforms support adding a custom domain from their dashboard once the
+first deployment succeeds — point the domain's DNS at the platform as
+instructed there, then update `seo.siteUrl` in `src/config/site.config.ts`
+to match and redeploy.
+
+## Local production build (sanity check before deploying)
+
+```bash
+npm install
+npm run build
+npm run start
+```
