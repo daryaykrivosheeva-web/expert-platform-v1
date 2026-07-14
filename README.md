@@ -85,13 +85,24 @@ Full type definitions live in `src/types/config.ts`.
 `src/config/examples/` contains complete alternate configs you can drop in
 as-is:
 
-- `psychologist.config.ts`
+- `psychologist.config.ts` — **currently active** (first commercial adaptation, see below)
+- `business-coach.config.ts` — the original generic default demo
 - `nutritionist.config.ts`
 - `astrologer.config.ts`
 
-To switch niche, copy the contents of one of these files into
-`src/config/site.config.ts` (or point the import in that file at the example
-you want), then adjust names/prices/contacts as needed.
+`site.config.ts` doesn't hold content directly — it imports and re-exports
+whichever example is currently live. To switch niche, change that one
+import line (or copy a file's contents in directly), then adjust
+names/prices/contacts as needed.
+
+### Commercial adaptation: psychologist
+
+The active config is a full premium adaptation for the psychology niche —
+warm milk/beige/sage palette, Playfair + Manrope typography, real Pexels
+photography, psychology-specific "what I help with" cards, a 4-step
+process, and a psychology-themed FAQ. See `CHANGELOG.md` [1.1.0] for the
+full list of what changed, and `src/config/examples/psychologist.config.ts`
+for the source of truth.
 
 ### Colors
 
