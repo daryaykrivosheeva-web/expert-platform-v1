@@ -32,7 +32,7 @@ https://www.notion.so/
 
 ## Шаг 3. Получите шаблон
 
-Мы пришлем вам ссылку на готовое рабочее пространство.
+Ссылка на готовое рабочее пространство https://charmed-euphonium-ca8.notion.site/Expert-Workspace-39edf74284c08099b940e896f0fe0e45?source=copy_link
 
 Откройте ее, находясь в своем аккаунте Notion.
 
