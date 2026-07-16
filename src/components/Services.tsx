@@ -12,11 +12,7 @@ export function Services() {
   return (
     <section id="services" className="py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Стоимость"
-          heading={services.heading}
-          subheading={services.subheading}
-        />
+        <SectionHeading heading={services.heading} subheading={services.subheading} />
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {services.items.map((item, i) => (

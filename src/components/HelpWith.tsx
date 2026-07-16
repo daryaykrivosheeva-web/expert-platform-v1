@@ -10,11 +10,7 @@ export function HelpWith() {
   return (
     <section id="help-with" className="bg-surface py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Направления работы"
-          heading={helpWith.heading}
-          subheading={helpWith.subheading}
-        />
+        <SectionHeading heading={helpWith.heading} subheading={helpWith.subheading} />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {helpWith.items.map((item, i) => {

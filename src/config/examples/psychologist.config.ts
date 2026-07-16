@@ -98,7 +98,7 @@ const psychologistConfig: SiteConfig = {
   },
 
   helpWith: {
-    heading: "С чем я помогаю",
+    heading: "Направления работы",
     subheading: "Частые запросы, с которыми приходят на консультацию",
     items: [
       {
@@ -135,7 +135,7 @@ const psychologistConfig: SiteConfig = {
   },
 
   services: {
-    heading: "Стоимость консультаций",
+    heading: "Стоимость",
     subheading: "Выберите формат, который подходит именно вам",
     items: [
       {
@@ -181,11 +181,11 @@ const psychologistConfig: SiteConfig = {
         ctaText: "Обсудить формат",
       },
     ],
-    footnote: "Первая консультация — ознакомительная. Вы ничем не обязаны продолжать, если формат не подойдёт.",
+    footnote: "Первая консультация — ознакомительная. Вы не обязаны продолжать, если формат не подойдёт.",
   },
 
   process: {
-    heading: "Как проходит работа",
+    heading: "Процесс работы",
     subheading: "Четыре простых шага от первого сообщения до результата",
     steps: [
       {

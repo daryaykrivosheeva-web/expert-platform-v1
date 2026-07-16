@@ -14,7 +14,7 @@ export function FAQ() {
   return (
     <section id="faq" className="bg-surface py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow="FAQ" heading={faq.heading} subheading={faq.subheading} />
+        <SectionHeading heading={faq.heading} subheading={faq.subheading} />
 
         <div className="mx-auto mt-14 max-w-3xl divide-y divide-border rounded-3xl border border-border bg-background">
           {faq.items.map((item, i) => {

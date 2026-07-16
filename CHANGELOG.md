@@ -4,6 +4,19 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.3.0] — 2026-07-16
+
+### Fixed
+
+- Hero stat badges (`Hero.tsx`): fully opaque background instead of 90%-transparent + backdrop-blur, so text stays readable regardless of what's behind them in the photo (was low-contrast over dark photo areas).
+- Duplicate section titles: `About`, `HelpWith`, `Services`, `Process`, `Testimonials`, `FAQ`, and `Contacts` no longer render a separate small "eyebrow" label above the heading when it just repeated (or nearly repeated) the heading text itself — every section now shows one clean title, consistent across the whole page.
+- `Process` step grid: column count is now derived from `process.steps.length` instead of being hardcoded to 5, so a 4-step (or 3/6-step) process fills the row evenly instead of leaving an empty trailing column that visually shifted everything left.
+- `FinalCTA` background changed from `bg-ink` (near-black) to `bg-primary-dark` — stays on-brand and dark enough for white text, without looking like an unrelated black slab.
+
+### Changed
+
+- Psychologist config content: `helpWith.heading` → "Направления работы" (was duplicating "С чем я помогаю"/nav wording), `services.heading` → "Стоимость" (was "Стоимость консультаций"), `process.heading` → "Процесс работы" (was "Как проходит работа", now built from the removed "Процесс" eyebrow), `services.footnote` no longer says "вы ничем не обязаны" (dropped "ничем").
+
 ## [1.2.2] — 2026-07-16
 
 ### Changed

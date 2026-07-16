@@ -18,11 +18,7 @@ export function Contacts() {
   return (
     <section id="contacts" className="py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Контакты"
-          heading={contacts.heading}
-          subheading={contacts.subheading}
-        />
+        <SectionHeading heading={contacts.heading} subheading={contacts.subheading} />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (

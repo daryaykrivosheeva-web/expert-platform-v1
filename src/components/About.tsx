@@ -11,7 +11,7 @@ export function About() {
   return (
     <section id="about" className="py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow="Обо мне" heading={about.heading} subheading={about.subheading} />
+        <SectionHeading heading={about.heading} subheading={about.subheading} />
 
         <div className="mt-16 grid items-start gap-14 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">

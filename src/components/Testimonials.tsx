@@ -11,11 +11,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Отзывы"
-          heading={testimonials.heading}
-          subheading={testimonials.subheading}
-        />
+        <SectionHeading heading={testimonials.heading} subheading={testimonials.subheading} />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.items.map((item, i) => (
