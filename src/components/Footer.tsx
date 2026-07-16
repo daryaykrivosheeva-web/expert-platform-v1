@@ -2,9 +2,10 @@ import Link from "next/link";
 import { Instagram, Send, MessageCircle } from "lucide-react";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
+import { legalLinks } from "@/lib/legal-links";
 
 export function Footer() {
-  const { footer, brand, contacts } = siteConfig;
+  const { footer, brand, contacts, legal } = siteConfig;
   const year = new Date().getFullYear();
 
   return (
@@ -63,8 +64,29 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted">
-          © {year} {footer.legalName}. Все права защищены.
+        <div className="mt-10 border-t border-border pt-6">
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs text-muted transition-colors hover:text-ink"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="mt-4 text-center text-xs text-muted">
+            © {year} {footer.legalName}. Все права защищены.
+          </div>
+          <div className="mt-1 text-center text-xs text-muted">
+            {legal.entityLabel} {legal.entityName} · ИНН {legal.inn}
+            {legal.ogrn ? ` · ${legal.entityType === "llc" ? "ОГРН" : "ОГРНИП"} ${legal.ogrn}` : ""}
+          </div>
+          <p className="mx-auto mt-3 max-w-xl text-center text-xs text-muted">
+            {legal.disclaimer}
+          </p>
         </div>
       </Container>
     </footer>

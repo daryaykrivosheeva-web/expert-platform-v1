@@ -57,7 +57,7 @@ const psychologistConfig: SiteConfig = {
   nav: [
     { label: "Обо мне", href: "#about" },
     { label: "С чем помогаю", href: "#help-with" },
-    { label: "Услуги", href: "#services" },
+    { label: "Стоимость", href: "#services" },
     { label: "Как проходит работа", href: "#process" },
     { label: "Отзывы", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
@@ -135,7 +135,7 @@ const psychologistConfig: SiteConfig = {
   },
 
   services: {
-    heading: "Услуги и стоимость",
+    heading: "Стоимость консультаций",
     subheading: "Выберите формат, который подходит именно вам",
     items: [
       {
@@ -279,13 +279,14 @@ const psychologistConfig: SiteConfig = {
     whatsapp: "https://wa.me/79992345678",
     instagram: "https://instagram.com/mariapolyakova.psy",
     workingHours: "Пн–Сб, 10:00–20:00 (МСК)",
+    consentLabel: "Я согласен(а) на обработку персональных данных в соответствии с Политикой конфиденциальности",
   },
 
   footer: {
     description: "Индивидуальная психологическая помощь. Онлайн, бережно, без осуждения.",
     links: [
       { label: "Обо мне", href: "#about" },
-      { label: "Услуги", href: "#services" },
+      { label: "Стоимость", href: "#services" },
       { label: "FAQ", href: "#faq" },
       { label: "Контакты", href: "#contacts" },
     ],
@@ -308,6 +309,16 @@ const psychologistConfig: SiteConfig = {
     ogImage: "/images/og-cover.jpg",
     locale: "ru_RU",
     themeColor: "#5F7857",
+  },
+
+  legal: {
+    entityType: "self-employed",
+    entityLabel: "Самозанятая",
+    entityName: "Полякова Мария Андреевна",
+    inn: "770812345678",
+    registrationAddress: "г. Москва",
+    effectiveDate: "2026-07-16",
+    disclaimer: "Информация на сайте носит информационный характер и не является публичной офертой.",
   },
 };
 

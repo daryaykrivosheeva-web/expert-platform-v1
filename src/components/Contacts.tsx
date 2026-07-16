@@ -1,9 +1,9 @@
-import { Mail, Phone, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { BookingConsent } from "@/components/BookingConsent";
 
 export function Contacts() {
   const { contacts } = siteConfig;
@@ -46,16 +46,11 @@ export function Contacts() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href={contacts.telegram} target="_blank" className="w-full sm:w-auto">
-            <Send className="h-4 w-4" />
-            Написать в Telegram
-          </Button>
-          <Button href={contacts.whatsapp} target="_blank" variant="secondary" className="w-full sm:w-auto">
-            <MessageCircle className="h-4 w-4" />
-            Написать в WhatsApp
-          </Button>
-        </div>
+        <BookingConsent
+          telegram={contacts.telegram}
+          whatsapp={contacts.whatsapp}
+          consentLabel={contacts.consentLabel}
+        />
       </Container>
     </section>
   );

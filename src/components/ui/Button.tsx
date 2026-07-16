@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
@@ -25,7 +25,7 @@ export function Button({
   variant?: ButtonVariant;
   className?: string;
   target?: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }) {
   return (
     <Link

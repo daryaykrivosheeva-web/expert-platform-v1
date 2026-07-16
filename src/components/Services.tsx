@@ -13,7 +13,7 @@ export function Services() {
     <section id="services" className="py-20 sm:py-28">
       <Container>
         <SectionHeading
-          eyebrow="Услуги"
+          eyebrow="Стоимость"
           heading={services.heading}
           subheading={services.subheading}
         />

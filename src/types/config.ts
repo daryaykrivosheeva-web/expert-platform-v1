@@ -147,12 +147,35 @@ export interface ContactsConfig {
   whatsapp: string;
   instagram?: string;
   workingHours: string;
+  consentLabel: string;
 }
 
 export interface FooterConfig {
   description: string;
   links: NavLink[];
   legalName: string;
+}
+
+/**
+ * Legal entity status. Drives wording across the auto-generated legal
+ * documents (src/lib/legal-content.ts) — e.g. a self-employed individual
+ * and an LLC are described differently in the consent/terms text.
+ */
+export type LegalEntityType = "ip" | "self-employed" | "llc";
+
+export interface LegalConfig {
+  entityType: LegalEntityType;
+  /** Human-readable status shown in the footer, e.g. "Самозанятая", "ИП", "ООО". */
+  entityLabel: string;
+  /** Full legal name of the entity/individual, e.g. "Полякова Мария Андреевна". */
+  entityName: string;
+  inn: string;
+  ogrn?: string;
+  registrationAddress: string;
+  /** ISO date (YYYY-MM-DD) the legal documents take effect / were last updated. */
+  effectiveDate: string;
+  /** Shown in the footer, e.g. "Информация на сайте носит информационный характер и не является публичной офертой." */
+  disclaimer: string;
 }
 
 export interface SeoConfig {
@@ -180,4 +203,5 @@ export interface SiteConfig {
   contacts: ContactsConfig;
   footer: FooterConfig;
   seo: SeoConfig;
+  legal: LegalConfig;
 }

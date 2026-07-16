@@ -276,6 +276,7 @@ const businessCoachConfig: SiteConfig = {
     whatsapp: "https://wa.me/79991234567",
     instagram: "https://instagram.com/annavolkova",
     workingHours: "Пн–Пт, 10:00–19:00 (МСК)",
+    consentLabel: "Я согласен(а) на обработку персональных данных в соответствии с Политикой конфиденциальности",
   },
 
   footer: {
@@ -303,6 +304,17 @@ const businessCoachConfig: SiteConfig = {
     ogImage: "/images/og-cover.jpg",
     locale: "ru_RU",
     themeColor: "#6366F1",
+  },
+
+  legal: {
+    entityType: "ip",
+    entityLabel: "ИП",
+    entityName: "Волкова Анна Сергеевна",
+    inn: "770123456789",
+    ogrn: "312770000012345",
+    registrationAddress: "г. Москва",
+    effectiveDate: "2026-07-14",
+    disclaimer: "Информация на сайте носит информационный характер и не является публичной офертой.",
   },
 };
 

@@ -143,6 +143,7 @@ const nutritionistConfig: SiteConfig = {
     whatsapp: "https://wa.me/79991112233",
     instagram: "https://instagram.com/mariagreen",
     workingHours: "Пн–Пт, 9:00–18:00 (МСК)",
+    consentLabel: "Я согласен(а) на обработку персональных данных в соответствии с Политикой конфиденциальности",
   },
   footer: {
     description: "Индивидуальные программы питания для здоровья и энергии.",
@@ -162,6 +163,16 @@ const nutritionistConfig: SiteConfig = {
     ogImage: "/images/og-cover.jpg",
     locale: "ru_RU",
     themeColor: "#16A34A",
+  },
+
+  legal: {
+    entityType: "self-employed",
+    entityLabel: "Самозанятая",
+    entityName: "Грин Мария Игоревна",
+    inn: "165812345678",
+    registrationAddress: "г. Казань",
+    effectiveDate: "2026-07-14",
+    disclaimer: "Информация на сайте носит информационный характер и не является публичной офертой.",
   },
 };
 

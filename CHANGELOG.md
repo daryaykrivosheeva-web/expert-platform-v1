@@ -4,6 +4,20 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.0] — 2026-07-16
+
+### Added
+
+- New universal `legal` config section (`src/types/config.ts`) — entity type (ИП / самозанятый / ООО), legal name, INN/OGRN, registration address, effective date, and the "informational, not a public offer" disclaimer. Backfilled into all 4 example configs.
+- Auto-generated legal documents (`src/lib/legal-content.ts`) built from each client's own config data — Privacy Policy, Consent to Personal Data Processing, Terms of Use, Cookie Policy, and Requisites — rendered at `/legal/privacy`, `/legal/consent`, `/legal/terms`, `/legal/cookies`, `/legal/requisites` via a shared `LegalPage` layout. Reusable for every future niche/client without touching component code.
+- Required consent checkbox (`BookingConsent`) gating the Telegram/WhatsApp booking buttons in the Contacts section, linking to the Consent document.
+- Footer now shows links to all 5 legal pages, the entity's requisites (status, legal name, INN/OGRN), and the offer disclaimer — all sourced from `legal` config.
+- `consentLabel` field on `ContactsConfig` for the checkbox copy.
+
+### Changed
+
+- Psychologist config: "Услуги" renamed to "Стоимость" (nav) / "Стоимость консультаций" (section heading) — applied as a generic template change (the `Services` section eyebrow is now "Стоимость" across all niches).
+
 ## [1.1.0] — 2026-07-14
 
 ### Added

@@ -143,6 +143,7 @@ const astrologerConfig: SiteConfig = {
     whatsapp: "https://wa.me/79994445566",
     instagram: "https://instagram.com/sofialuna",
     workingHours: "Ежедневно, 11:00–21:00 (МСК)",
+    consentLabel: "Я согласен(а) на обработку персональных данных в соответствии с Политикой конфиденциальности",
   },
   footer: {
     description: "Натальная астрология и прогнозы для осознанных решений.",
@@ -162,6 +163,16 @@ const astrologerConfig: SiteConfig = {
     ogImage: "/images/og-cover.jpg",
     locale: "ru_RU",
     themeColor: "#7C3AED",
+  },
+
+  legal: {
+    entityType: "self-employed",
+    entityLabel: "Самозанятая",
+    entityName: "Луна София Владимировна",
+    inn: "770512345678",
+    registrationAddress: "г. Санкт-Петербург",
+    effectiveDate: "2026-07-14",
+    disclaimer: "Информация на сайте носит информационный характер и не является публичной офертой.",
   },
 };
 

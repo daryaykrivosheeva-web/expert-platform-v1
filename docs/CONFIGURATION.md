@@ -70,12 +70,34 @@ Heading/subheading + primary CTA label + secondary supporting text (e.g.
 Heading/subheading, email, phone, city, working hours, and the three
 messaging channels: `telegram` and `whatsapp` (full deep links, required)
 and `instagram` (optional). These same values also feed the footer's social
-icons and the header/hero/final-CTA buttons.
+icons and the header/hero/final-CTA buttons. `consentLabel` is the copy
+next to the required checkbox that gates the Telegram/WhatsApp buttons in
+the Contacts section (see `legal` below).
 
 ## `footer`
 
 Short description line, footer nav links, and the legal name used in the
 copyright line.
+
+## `legal`
+
+Drives the site's legal footprint — this is what makes the auto-generated
+legal pages (see `docs/LEGAL_PAGES.md`) usable for a real client without
+touching code:
+
+- `entityType`: `"ip" | "self-employed" | "llc"`
+- `entityLabel`: human-readable status shown in the footer, e.g. "Самозанятая", "ИП", "ООО"
+- `entityName`: full legal name, e.g. "Полякова Мария Андреевна"
+- `inn`, `ogrn` (optional)
+- `registrationAddress`
+- `effectiveDate`: ISO date, formatted into Russian on the legal pages
+- `disclaimer`: shown in the footer, e.g. "Информация на сайте носит информационный характер и не является публичной офертой."
+
+The 5 legal document routes themselves (`/legal/privacy`, `/legal/consent`,
+`/legal/terms`, `/legal/cookies`, `/legal/requisites`) are structural and
+listed in `src/lib/legal-links.ts` — every client gets the same pages at
+the same paths; only the generated content changes per `legal` + `expert`
++ `contacts` + `seo`.
 
 ## `seo`
 

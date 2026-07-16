@@ -28,6 +28,7 @@ Scroll-through walkthrough video: [`docs/video/walkthrough.webm`](docs/video/wal
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the config-driven theming and content model work
 - [`docs/CONFIGURATION.md`](docs/CONFIGURATION.md) — full field-by-field reference for `site.config.ts`
 - [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — Vercel and Netlify deployment steps
+- [`docs/LEGAL_PAGES.md`](docs/LEGAL_PAGES.md) — the 5 auto-generated legal pages (Privacy, Consent, Terms, Cookies, Requisites) and the booking consent checkbox
 - [`CHANGELOG.md`](CHANGELOG.md) — release history
 
 ---
