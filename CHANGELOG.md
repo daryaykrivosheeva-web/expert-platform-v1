@@ -4,6 +4,12 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.1] — 2026-07-16
+
+### Changed
+
+- Legal document content moved from being generated inline in each route to named components in `src/legal/`: `privacy.tsx`, `consent.tsx`, `agreement.tsx` (Terms of Use), `cookies.tsx`, `requisites.tsx`. Each pairs one `src/lib/legal-content.ts` generator with the shared `LegalPage` layout. The `src/app/legal/*/page.tsx` routes are now thin wrappers around these.
+
 ## [1.2.0] — 2026-07-16
 
 ### Added

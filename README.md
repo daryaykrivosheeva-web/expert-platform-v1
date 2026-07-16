@@ -185,10 +185,11 @@ full support for Next.js SSR/ISR on Netlify. Point Netlify at this folder
 
 ```
 src/
-  app/            # Next.js App Router entry (layout, page, icon, og image)
+  app/            # Next.js App Router entry (layout, page, icon, og image, legal/* routes)
   components/     # One component per page section + shared UI primitives
   config/         # site.config.ts (edit this) + examples/ (niche variants)
-  lib/            # fonts, icon map, utils
+  legal/          # Named legal-document components (privacy, consent, agreement, cookies, requisites)
+  lib/            # fonts, icon map, utils, legal-content generators, legal-links
   types/          # SiteConfig type contract
 ```
 

@@ -3,20 +3,22 @@
 Every deployment of Expert Platform v1 ships 5 legal document routes,
 generated automatically from the client's own config data:
 
-| Page | Route | Generator |
-|---|---|---|
-| Privacy Policy | `/legal/privacy` | `getPrivacyPolicyContent` |
-| Consent to Personal Data Processing | `/legal/consent` | `getConsentContent` |
-| Terms of Use | `/legal/terms` | `getTermsContent` |
-| Cookie Policy | `/legal/cookies` | `getCookiesContent` |
-| Requisites | `/legal/requisites` | `getRequisitesContent` |
+| Page | Route | Content component | Generator |
+|---|---|---|---|
+| Privacy Policy | `/legal/privacy` | `src/legal/privacy.tsx` | `getPrivacyPolicyContent` |
+| Consent to Personal Data Processing | `/legal/consent` | `src/legal/consent.tsx` | `getConsentContent` |
+| Terms of Use ("Пользовательское соглашение") | `/legal/terms` | `src/legal/agreement.tsx` | `getTermsContent` |
+| Cookie Policy | `/legal/cookies` | `src/legal/cookies.tsx` | `getCookiesContent` |
+| Requisites | `/legal/requisites` | `src/legal/requisites.tsx` | `getRequisitesContent` |
 
 All 5 generators live in `src/lib/legal-content.ts` and take the full
 `SiteConfig` as input — they read `legal`, `expert`, `contacts`, and `seo`
-to produce the document text. The routes themselves
-(`src/app/legal/*/page.tsx`) are thin: each just calls the matching
-generator and renders it through the shared `src/components/legal/LegalPage.tsx`
-layout.
+to produce the document text. `src/legal/*.tsx` are named components that
+pair one generator with the shared `src/components/legal/LegalPage.tsx`
+layout (e.g. `PrivacyPolicy`, `CookiesPolicy`, `UserAgreement`,
+`Requisites`, `ConsentToProcessing`). The Next.js routes themselves
+(`src/app/legal/*/page.tsx`) are thin: each just wraps the matching
+`src/legal/*.tsx` component in `Header`/`Footer` and sets the page title.
 
 ## Re-skinning for a new client
 
