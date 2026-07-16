@@ -4,6 +4,12 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.2] — 2026-07-16
+
+### Changed
+
+- Replaced the stock hero/about photos with the client's real portrait photography (`public/images/hero.jpg`, `public/images/about.jpg`), downsized from source (~3.6 MB, up to 4082×5440) to web-appropriate JPEGs (~200 KB, max 2000px) via `sharp`. `expert.photo`, `hero.image`, and `about.photo` in `psychologist.config.ts` now point to local files instead of hotlinked Pexels URLs.
+
 ## [1.2.1] — 2026-07-16
 
 ### Changed

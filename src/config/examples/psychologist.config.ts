@@ -43,7 +43,7 @@ const psychologistConfig: SiteConfig = {
       "Использую доказательные методы — когнитивно-поведенческую терапию и элементы ACT — сочетая их с бережным, человечным подходом.",
       "Моя задача — не просто выслушать, а помочь вам увидеть ситуацию яснее и вернуть ощущение опоры под ногами.",
     ],
-    photo: "https://images.pexels.com/photos/3791554/pexels-photo-3791554.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    photo: "/images/hero.jpg",
     credentials: [
       "8 лет практики в психологическом консультировании",
       "Магистр клинической психологии, МГУ",
@@ -72,7 +72,7 @@ const psychologistConfig: SiteConfig = {
       "Бережные онлайн-консультации для тех, кто хочет разобраться в тревоге, выгорании и отношениях — без осуждения и лишних слов.",
     ctaPrimaryText: "Записаться",
     ctaSecondaryText: "Задать вопрос",
-    image: "https://images.pexels.com/photos/3791554/pexels-photo-3791554.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: "/images/hero.jpg",
     stats: [
       { value: "8 лет", label: "практики" },
       { value: "700+", label: "консультаций" },
@@ -88,7 +88,7 @@ const psychologistConfig: SiteConfig = {
       "Использую доказательные методы — когнитивно-поведенческую терапию и элементы ACT — сочетая их с бережным, человечным подходом.",
       "Верю, что терапия работает, когда в кабинете безопасно говорить честно. Моя задача — создать именно такое пространство и помочь вам увидеть ситуацию яснее.",
     ],
-    photo: "https://images.pexels.com/photos/4906289/pexels-photo-4906289.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    photo: "/images/about.jpg",
     highlights: [
       { icon: "GraduationCap", text: "Магистр клинической психологии" },
       { icon: "Briefcase", text: "8 лет практики" },
