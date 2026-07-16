@@ -1,0 +1,103 @@
+# ==========================
+# CLIENT DATA
+# Единый источник данных проекта
+# ==========================
+
+client:
+  project_name:
+  niche:
+  full_name:
+  company_name:
+  status: # Самозанятый / ИП / ООО
+  city:
+
+brand:
+  primary_color:
+  secondary_color:
+  accent_color:
+  font:
+  logo:
+
+contacts:
+  phone:
+  whatsapp:
+  telegram:
+  email:
+  website:
+  address:
+
+hero:
+  title:
+  subtitle:
+  button_primary:
+  button_secondary:
+
+about:
+  short_description:
+  full_description:
+  experience:
+  education:
+  approach:
+
+services:
+
+  - name:
+    description:
+    duration:
+    price:
+
+  - name:
+    description:
+    duration:
+    price:
+
+  - name:
+    description:
+    duration:
+    price:
+
+faq:
+
+  - question:
+    answer:
+
+  - question:
+    answer:
+
+testimonials:
+
+  - name:
+    text:
+    rating:
+
+  - name:
+    text:
+    rating:
+
+seo:
+  title:
+  description:
+  keywords:
+
+social:
+  instagram:
+  vk:
+  telegram_channel:
+  youtube:
+
+booking:
+  booking_service:
+  booking_url:
+
+legal:
+  inn:
+  ogrn:
+  ogrnip:
+  kpp:
+  legal_address:
+
+analytics:
+  yandex_metrika:
+  google_analytics:
+
+notes:
