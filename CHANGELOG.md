@@ -4,6 +4,16 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.3.1] — 2026-07-24
+
+### Changed
+
+- Repository reorganized to separate the product from studio-wide material: moved `STUDIO_SYSTEM.md`, `PRODUCT_MATRIX.md`, `SERVICES.md`, and `02_SOP/SOP-013` to the `AI-Product-Studio` monorepo, where they belong (they describe the whole studio, not this product). Deleted the disconnected `PROJECTS/PROJECT_TEMPLATE` scaffolding (`CLIENT_DATA.yaml`, empty `Info.md` stubs, duplicate source photos, empty placeholder portfolio niches) that had never been wired to the real client-tracking convention (`13_Clients/` in the monorepo) or the real per-niche config mechanism (`src/config/examples/*.config.ts`).
+- `06_AI/Website_Product_Builder` → `builder/`, rewritten to describe the actual adaptation mechanism (config files in `src/config/examples/`, photos in `public/images/`) instead of the never-used `CLIENT_DATA.yaml`/`PROJECTS/PROJECT-XXX` scheme.
+- `Portfolio/Psychologist/Мария Полякова` → `portfolio/psychologist/maria-polyakova/` (also fixed a `Cosmetologist/Lawyer` mis-nesting bug and dropped empty placeholder niche folders).
+- Added a "Repository layout" section to `README.md` explaining product code (`src/`, `public/`, `docs/`) vs. supporting material (`builder/`, `portfolio/`), so new niches and clients can be added without restructuring again.
+- No changes to `src/`, `public/`, `docs/`, or any config — build and typecheck verified passing.
+
 ## [1.3.0] — 2026-07-16
 
 ### Fixed
