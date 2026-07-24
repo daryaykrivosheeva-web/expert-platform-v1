@@ -181,7 +181,22 @@ full support for Next.js SSR/ISR on Netlify. Point Netlify at this folder
 
 ---
 
-## Project structure
+## Repository layout
+
+This repo holds the product code plus everything that supports selling and
+adapting it. Product code is the only part a niche adaptation is allowed to
+touch (see `builder/ROLE.md`); everything else is supporting material.
+
+```
+src/                # THE PRODUCT — Next.js app, components, config, legal generators
+public/             # Static assets served by the site (images, favicon fallback, etc.)
+docs/               # Architecture / configuration / deployment / legal docs, screenshots, walkthrough video
+builder/            # AI-role playbook for adapting this template to a new client (never edits src/)
+portfolio/          # Real client adaptations — screenshots + video per niche, for ads/portfolio use
+CHANGELOG.md         # Release history of the product itself
+```
+
+`src/` (the product):
 
 ```
 src/
@@ -197,3 +212,17 @@ Every section component (`Hero`, `About`, `HelpWith`, `Services`, `Process`,
 `Testimonials`, `FAQ`, `FinalCTA`, `Contacts`, `Footer`, `Header`) imports
 `siteConfig` and renders purely from it — there is no hardcoded copy in the
 component tree.
+
+`builder/` (how to adapt this template for a new client — read `ROLE.md`
+first, then `WORKFLOW.md`): only ever touches `src/config/examples/*.config.ts`,
+`src/config/site.config.ts` and `public/images/` — never the component
+architecture.
+
+`portfolio/<niche>/<client>/` (e.g. `portfolio/psychologist/maria-polyakova/`):
+finished adaptations' screenshots and video, for advertising and showcasing
+the studio's work. Add a new folder here per niche/client as new commercial
+adaptations ship.
+
+A client's commercial/organizational tracking (brief, project status,
+deliverables sign-off) is **not** kept in this repo — it lives in
+`AI-Product-Studio/13_Clients/CLIENT-XXX_Имя/` in the studio monorepo.
