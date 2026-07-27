@@ -19,12 +19,10 @@ import type { SiteConfig } from "@/types/config";
  * by Apple, Stripe, Linear, Notion, Framer. No literal legal iconography
  * (scales, gavels) — abstract trust/quality icons only.
  *
- * IMPORTANT — placeholder data pending client confirmation:
- * expert.name, all `contacts.*` values, `legal.*` values, and `seo.siteUrl`
- * are demo placeholders and must be confirmed with the real client before
- * this config goes live. `hero.image` / `about.photo` are left empty —
- * the template's gradient-avatar fallback renders until real photos are
- * supplied (see README "Photos").
+ * This is a portfolio/demo build (no real client behind it) — the name,
+ * contacts, prices, and legal entity details are illustrative, not a real
+ * person's data. Photos are real (studio-provided) portraits used with
+ * permission for this portfolio piece.
  */
 const lawyerConfig: SiteConfig = {
   brand: {
@@ -56,7 +54,7 @@ const lawyerConfig: SiteConfig = {
       "Не даю громких обещаний — трезво оцениваю ситуацию и говорю, как есть.",
       "Веду дело лично, от первого разговора до последней подписи — без передачи младшим юристам.",
     ],
-    photo: "",
+    photo: "/images/lawyer-hero.jpg",
     credentials: [
       "15+ лет практики в гражданском и коммерческом праве",
       "300+ успешно закрытых дел и сделок",
@@ -85,7 +83,7 @@ const lawyerConfig: SiteConfig = {
     ctaPrimaryText: "Получить консультацию",
     ctaSecondaryText: "Связаться",
     ctaSecondaryHref: "#contacts",
-    image: "",
+    image: "/images/lawyer-hero.jpg",
     stats: [
       { value: "15 лет", label: "практики" },
       { value: "300+", label: "дел и сделок" },
@@ -101,7 +99,7 @@ const lawyerConfig: SiteConfig = {
       "За это время прошёл через сотни ситуаций: от простых договоров до сложных арбитражных споров. Это опыт, который помогает быстро видеть суть дела и не терять время на лишнее.",
       "Я не обещаю то, что не могу гарантировать. Моя задача — трезво оценить ситуацию, предложить рабочий путь решения и пройти его вместе с вами.",
     ],
-    photo: "",
+    photo: "/images/lawyer-about.jpg",
     highlights: [
       { icon: "Briefcase", text: "15+ лет практики" },
       { icon: "Award", text: "300+ дел и сделок" },
