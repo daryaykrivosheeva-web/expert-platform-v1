@@ -4,6 +4,16 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.4.0] — 2026-07-27
+
+### Added
+
+- Second commercial adaptation: **lawyer** (`src/config/examples/lawyer.config.ts`) — a restrained, minimalist personal legal practice site. White/graphite/deep-navy palette, Sora + Inter typography, no literal legal iconography. Built entirely through configuration — no component code touched beyond the two universal, backward-compatible template extensions below (needed by this niche, available to all future ones).
+- **Optional `whyTrust` section** (`src/components/WhyTrust.tsx`, `src/types/config.ts`): a small trust-factor grid (icon + title + description) rendered between HelpWith and Process. Omit the `whyTrust` field on `SiteConfig` to skip it — the 4 existing niches are unaffected.
+- **Services and Testimonials are now optional per niche**: `page.tsx` renders each only if `items.length > 0`. Set either to `[]` to omit the section (used by `lawyer.config.ts`: services are shown as plain cards via `helpWith` instead of a priced grid, and no reviews are collected yet).
+- **Multi-tenant config selection**: `site.config.ts` now picks the active niche via `NEXT_PUBLIC_SITE_CONFIG` (defaults to `psychologist`, preserving the exact previous behavior for the live client). Lets multiple real clients deploy from this one repo, each as their own Vercel/Netlify project with their own env var — see `docs/DEPLOYMENT.md` → "Multiple clients, one repo".
+- `hero.ctaSecondaryHref` (optional): lets a niche point the Hero secondary button somewhere other than `#services` (defaults to `#services` for backward compatibility; `lawyer.config.ts` points it at `#contacts`).
+
 ## [1.3.1] — 2026-07-24
 
 ### Changed

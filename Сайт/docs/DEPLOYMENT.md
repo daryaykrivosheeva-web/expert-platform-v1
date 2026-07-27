@@ -12,7 +12,29 @@
 4. Every push to a non-default branch (or every pull request) gets its own
    **Preview Deployment** URL automatically. Pushes to `main` deploy to
    **Production** automatically.
-5. No environment variables are required — the template has no backend.
+5. No environment variables are required for a single-client deployment —
+   the template has no backend. For multiple real clients deployed from
+   this one repo, see "Multiple clients, one repo" below.
+
+## Multiple clients, one repo
+
+This repo now serves more than one real client (e.g. the psychologist and
+the lawyer adaptations), each with their own domain and their own Vercel/
+Netlify project. `src/config/site.config.ts` picks the active niche config
+via the `NEXT_PUBLIC_SITE_CONFIG` environment variable:
+
+1. Create a **separate Vercel/Netlify project** per client, all pointing at
+   this same repo/branch (Root Directory still `Сайт`).
+2. In that project's environment variables, set `NEXT_PUBLIC_SITE_CONFIG` to
+   the client's config key — e.g. `lawyer` for `src/config/examples/lawyer.config.ts`.
+3. Leave it unset for the original client (psychologist) — it's the default,
+   so that project needs no env var and is never affected by new clients
+   being added.
+
+**Never change the default in `site.config.ts`** to point at a new client —
+that would flip every deployment without an env var set (i.e. the original
+client's production site) to the new client's content. Always add the new
+client via a new env var on a new project instead.
 
 ## Netlify
 

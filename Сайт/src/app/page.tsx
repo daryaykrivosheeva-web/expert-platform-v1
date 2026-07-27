@@ -1,8 +1,10 @@
+import siteConfig from "@/config/site.config";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { HelpWith } from "@/components/HelpWith";
 import { Services } from "@/components/Services";
+import { WhyTrust } from "@/components/WhyTrust";
 import { Process } from "@/components/Process";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
@@ -18,9 +20,10 @@ export default function Home() {
         <Hero />
         <About />
         <HelpWith />
-        <Services />
+        {siteConfig.services.items.length > 0 && <Services />}
+        {siteConfig.whyTrust && <WhyTrust />}
         <Process />
-        <Testimonials />
+        {siteConfig.testimonials.items.length > 0 && <Testimonials />}
         <FAQ />
         <FinalCTA />
         <Contacts />

@@ -46,6 +46,21 @@ CTA label, and an optional `highlighted: true` to render it as the
 dark "recommended" card. Optional `footnote` below the grid (e.g. installment
 plan note).
 
+**Optional section**: set `items: []` to omit Services entirely (e.g. a niche
+that shows services as plain cards via `helpWith` instead of a priced grid —
+see `lawyer.config.ts`). `Hero`'s secondary CTA falls back to `#services` by
+default; set `hero.ctaSecondaryHref` to point elsewhere (e.g. `#contacts`)
+when Services is omitted.
+
+## `whyTrust` (optional)
+
+Not present on `SiteConfig` by default — add this field to a niche config to
+render a small grid of trust factors between HelpWith and Process (e.g.
+confidentiality, years of experience, individual approach). Heading/subheading
++ `items: { icon, title, description }[]`. Omit the field entirely to skip
+the section — most niches don't need it; see `lawyer.config.ts` for a working
+example.
+
 ## `process`
 
 Heading/subheading + an ordered list of steps (title + description),
@@ -55,6 +70,9 @@ rendered as a numbered timeline.
 
 Heading/subheading + a list of `{ name, role, text, photo?, rating }`.
 Missing `photo` falls back to an initials avatar.
+
+**Optional section**: set `items: []` to omit Testimonials entirely (e.g. a
+new client with no collected reviews yet).
 
 ## `faq`
 

@@ -52,6 +52,8 @@ export interface HeroConfig {
   subheadline: string;
   ctaPrimaryText: string;
   ctaSecondaryText: string;
+  /** Anchor the secondary hero button scrolls to. Defaults to "#services". */
+  ctaSecondaryHref?: string;
   image: string;
   stats: { value: string; label: string }[];
 }
@@ -92,6 +94,23 @@ export interface ServicesConfig {
   subheading: string;
   items: ServiceItem[];
   footnote?: string;
+}
+
+export interface WhyTrustItem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+/**
+ * Optional "why clients trust me" section — a small grid of trust factors
+ * (e.g. confidentiality, experience, individual approach). Omit this field
+ * entirely to skip the section; no niche is required to use it.
+ */
+export interface WhyTrustConfig {
+  heading: string;
+  subheading: string;
+  items: WhyTrustItem[];
 }
 
 export interface ProcessStep {
@@ -196,6 +215,8 @@ export interface SiteConfig {
   about: AboutConfig;
   helpWith: HelpWithConfig;
   services: ServicesConfig;
+  /** Optional trust-factors grid. Omit entirely to skip the section. */
+  whyTrust?: WhyTrustConfig;
   process: ProcessConfig;
   testimonials: TestimonialsConfig;
   faq: FaqConfig;

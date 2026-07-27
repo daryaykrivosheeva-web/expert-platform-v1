@@ -86,24 +86,46 @@ Full type definitions live in `src/types/config.ts`.
 `src/config/examples/` contains complete alternate configs you can drop in
 as-is:
 
-- `psychologist.config.ts` — **currently active** (first commercial adaptation, see below)
+- `psychologist.config.ts` — **default** (first commercial adaptation, live client — see below)
+- `lawyer.config.ts` — second commercial adaptation (personal legal practice), deployed as its own Vercel project via `NEXT_PUBLIC_SITE_CONFIG=lawyer` — see below
 - `business-coach.config.ts` — the original generic default demo
 - `nutritionist.config.ts`
 - `astrologer.config.ts`
 
-`site.config.ts` doesn't hold content directly — it imports and re-exports
-whichever example is currently live. To switch niche, change that one
-import line (or copy a file's contents in directly), then adjust
-names/prices/contacts as needed.
+`site.config.ts` doesn't hold content directly — it picks whichever example
+is active based on the `NEXT_PUBLIC_SITE_CONFIG` environment variable (falls
+back to `psychologist` if unset), so multiple real clients can each have
+their own Vercel/Netlify project deployed from this one repo without
+touching each other's config. See `docs/DEPLOYMENT.md` → "Multiple clients,
+one repo". For local dev/preview of a specific niche without deploying:
+`NEXT_PUBLIC_SITE_CONFIG=lawyer npm run dev`.
 
 ### Commercial adaptation: psychologist
 
-The active config is a full premium adaptation for the psychology niche —
+The default config is a full premium adaptation for the psychology niche —
 warm milk/beige/sage palette, Playfair + Manrope typography, real Pexels
 photography, psychology-specific "what I help with" cards, a 4-step
 process, and a psychology-themed FAQ. See `CHANGELOG.md` [1.1.0] for the
 full list of what changed, and `src/config/examples/psychologist.config.ts`
 for the source of truth.
+
+### Commercial adaptation: lawyer
+
+A restrained, minimalist adaptation for a personal legal practice — white /
+graphite / deep navy palette, Sora + Inter typography, no literal legal
+iconography (no scales, no gavels). Introduces two universal, backward-
+compatible template additions used here and available to any future niche:
+
+- An optional `whyTrust` section (trust-factor grid) between HelpWith and
+  Process — omit the field to skip it, as the other 4 niches do.
+- `services` and `testimonials` are now optional per niche: set `items: []`
+  to omit the section entirely (this niche shows services as plain cards
+  via `helpWith` instead of priced cards, and has no collected reviews yet).
+
+See `CHANGELOG.md` for the full list, and
+`src/config/examples/lawyer.config.ts` for the source of truth. **Contains
+placeholder identity/contact/legal data pending client confirmation** — see
+the comment at the top of that file.
 
 ### Colors
 

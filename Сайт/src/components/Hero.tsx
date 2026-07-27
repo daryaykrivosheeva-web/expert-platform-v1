@@ -38,7 +38,7 @@ export function Hero() {
                 {hero.ctaPrimaryText}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
-              <Button href="#services" variant="secondary">
+              <Button href={hero.ctaSecondaryHref ?? "#services"} variant="secondary">
                 {hero.ctaSecondaryText}
               </Button>
             </div>
