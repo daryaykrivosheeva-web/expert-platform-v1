@@ -88,6 +88,7 @@ as-is:
 
 - `psychologist.config.ts` — **default** (first commercial adaptation, live client — see below)
 - `lawyer.config.ts` — second commercial adaptation (personal legal practice), deployed as its own Vercel project via `NEXT_PUBLIC_SITE_CONFIG=lawyer` — see below
+- `studio.config.ts` — the studio's own business-card/portfolio site (Дарья Радченко — website development for experts and small business), deployed via `NEXT_PUBLIC_SITE_CONFIG=studio` — see below
 - `business-coach.config.ts` — the original generic default demo
 - `nutritionist.config.ts`
 - `astrologer.config.ts`
@@ -126,6 +127,29 @@ See `CHANGELOG.md` for the full list, and
 `src/config/examples/lawyer.config.ts` for the source of truth. **Contains
 placeholder identity/contact/legal data pending client confirmation** — see
 the comment at the top of that file.
+
+### The studio's own site
+
+`studio.config.ts` is not a client adaptation — it's the studio's own
+business-card/portfolio site, built on the same template and mechanism as
+every niche above. Pine-green + copper palette, Manrope + Inter typography.
+Introduces three more universal, backward-compatible template additions,
+available to any future niche:
+
+- An optional `portfolio` section (case-study grid — each card leads with
+  the problem it solved, expands to show what was built and the result).
+- An optional `comparison` section (own-site vs. website-builder table).
+- An optional `addOns` section (small "what can be added later" chip list).
+
+Also: `helpWith` is now optional (skip it when `whyTrust` already covers the
+same ground), `contacts.max` adds a MAX-messenger button/icon alongside
+Telegram (falls back to WhatsApp when unset; set `contacts.whatsapp: ""` to
+hide WhatsApp entirely), and `expert.experienceYears` /
+`expert.clientsHelped` are now optional — Hero hides the corresponding
+floating badge instead of forcing a fabricated number. See `CHANGELOG.md`
+[1.5.0] and the comment at the top of `studio.config.ts` (which also flags
+the handful of placeholder contact/domain values still pending before this
+one goes live).
 
 ### Colors
 

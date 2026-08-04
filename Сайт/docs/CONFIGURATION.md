@@ -19,6 +19,10 @@ Name, role, niche label, tagline, bio paragraphs, credentials list,
 experience years, and clients-helped count. Used across Hero, About, and
 the SEO author field.
 
+`experienceYears` and `clientsHelped` are optional: omit either one to
+hide its floating stat badge in Hero, rather than stating a number you
+can't honestly back up yet (used by `studio.config.ts`).
+
 ## `nav`
 
 Header/footer navigation links — label + anchor href (`#about`, `#services`, …).
@@ -33,10 +37,12 @@ two CTA button labels, hero image, and a 3-item stat row.
 Heading/subheading, bio paragraphs (can differ from `expert.bio` if you want
 a longer About section), photo, and up to 4 highlight badges (icon + text).
 
-## `helpWith`
+## `helpWith` (optional)
 
 Heading/subheading + a grid of cards (icon, title, description) — the "who
-this is for" / "what I help with" section.
+this is for" / "what I help with" section. Omit the field entirely to skip
+it (e.g. when `whyTrust` already covers the same ground — see
+`studio.config.ts`).
 
 ## `services`
 
@@ -54,17 +60,43 @@ when Services is omitted.
 
 ## `whyTrust` (optional)
 
-Not present on `SiteConfig` by default — add this field to a niche config to
-render a small grid of trust factors between HelpWith and Process (e.g.
-confidentiality, years of experience, individual approach). Heading/subheading
-+ `items: { icon, title, description }[]`. Omit the field entirely to skip
-the section — most niches don't need it; see `lawyer.config.ts` for a working
-example.
+Add this field to a niche config to render a small grid of trust factors
+(e.g. confidentiality, years of experience, individual approach).
+Heading/subheading + `items: { icon, title, description }[]` — the column
+count is derived from `items.length` (2–6 supported, 6 lays out 3×2). Omit
+the field entirely to skip the section — most niches don't need it; see
+`lawyer.config.ts` for a working example. Where it renders relative to the
+other sections is controlled by `pageOrder` (see below); by default it sits
+between HelpWith and Process.
+
+## `comparison` (optional)
+
+An "own site vs. website builder" table: `heading`, `subheading`,
+`ownSiteLabel`/`builderLabel` (the two column headers), `rows: { label,
+ownSite, builder }[]`, and an optional `footnote` below the table. Keep the
+copy factual and non-disparaging — no competitor pricing claims, since
+those go stale. Omit the field entirely to skip the section; see
+`studio.config.ts` for a working example ("Почему не Tilda?").
+
+## `portfolio` (optional)
+
+A case-study grid: `heading`, `subheading`, `items: { icon, title,
+category, problem, description, result }[]`. Each card leads with
+`problem` — the one-sentence answer to "what task did this solve?" — and
+expands ("Подробнее") to reveal `description` (what was built) and
+`result` (the outcome). Omit the field entirely to skip the section; see
+`studio.config.ts` for a working example.
 
 ## `process`
 
 Heading/subheading + an ordered list of steps (title + description),
 rendered as a numbered timeline.
+
+## `addOns` (optional)
+
+A small "what can be added later" teaser: `heading`, `subheading`, `items:
+{ icon, label }[]`, rendered as a single row of chips. Omit the field
+entirely to skip the section; see `studio.config.ts` for a working example.
 
 ## `testimonials`
 
@@ -85,12 +117,16 @@ Heading/subheading + primary CTA label + secondary supporting text (e.g.
 
 ## `contacts`
 
-Heading/subheading, email, phone, city, working hours, and the three
-messaging channels: `telegram` and `whatsapp` (full deep links, required)
-and `instagram` (optional). These same values also feed the footer's social
-icons and the header/hero/final-CTA buttons. `consentLabel` is the copy
-next to the required checkbox that gates the Telegram/WhatsApp buttons in
-the Contacts section (see `legal` below).
+Heading/subheading, email, phone, city, working hours, and the messaging
+channels: `telegram` (full deep link, required), `whatsapp` (deep link —
+set to `""` to hide the WhatsApp button/icon entirely), `max` (optional —
+a MAX-messenger link, or a `tel:`/`mailto:` fallback if there's no public
+profile yet; shown as a second booking button next to Telegram and as a
+footer icon, falling back to `whatsapp` when unset), and `instagram`
+(optional). These same values also feed the footer's social icons and the
+header/hero/final-CTA buttons. `consentLabel` is the copy next to the
+required checkbox that gates the Telegram/MAX (or WhatsApp) buttons in the
+Contacts section (see `legal` below).
 
 ## `footer`
 
@@ -124,3 +160,17 @@ the same paths; only the generated content changes per `legal` + `expert`
 (mobile browser chrome color). `ogImage` is reserved for teams that want to
 replace the auto-generated Open Graph image with a static asset — see
 `docs/ARCHITECTURE.md`.
+
+## `pageOrder` (optional)
+
+Overrides the order sections render in on `<main>`. Omit it entirely and
+you get the exact order every existing niche has always rendered in — hero,
+about, helpWith, services, whyTrust, process, testimonials, faq, finalCta,
+contacts (each optional/empty section already no-ops, so this is identical
+to today's conditional rendering). Set it when a niche wants a genuinely
+different narrative flow — e.g. `studio.config.ts` leads with `whyTrust` and
+`comparison` right after Hero, and moves `about` down near the end. Listing
+a section whose data is missing is harmless (it renders nothing); listing a
+section twice or a typo'd key is a TypeScript error (`SectionKey` in
+`src/types/config.ts`) since the value must be one of the keys `page.tsx`'s
+`sectionComponents` registry knows about.
