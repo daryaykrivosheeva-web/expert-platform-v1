@@ -184,6 +184,8 @@ export interface PortfolioItem {
   description: string;
   /** The outcome — shown when the card is expanded. */
   result: string;
+  /** Optional preview image shown on the card front. Falls back to the icon badge when unset. */
+  image?: string;
 }
 
 export interface PortfolioConfig {

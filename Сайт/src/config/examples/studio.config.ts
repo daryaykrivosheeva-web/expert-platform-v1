@@ -51,7 +51,7 @@ const studioConfig: SiteConfig = {
       "Создаю современные цифровые решения для экспертов и малого бизнеса.",
       "Веду каждый проект лично — от обсуждения задачи до запуска.",
     ],
-    photo: "",
+    photo: "/images/studio-hero.jpg",
     credentials: [
       "Разработка сайтов под ключ",
       "Опыт с Telegram Mini Apps и AI-инструментами",
@@ -77,7 +77,7 @@ const studioConfig: SiteConfig = {
     ctaPrimaryText: "Обсудить проект",
     ctaSecondaryText: "Посмотреть работы",
     ctaSecondaryHref: "#portfolio",
-    image: "",
+    image: "/images/studio-hero.jpg",
     stats: [
       { value: "10+", label: "реализованных проектов" },
       { value: "6", label: "направлений работы" },
@@ -93,7 +93,7 @@ const studioConfig: SiteConfig = {
       "Для меня важно сделать не просто красивый сайт, а инструмент, который помогает вам получать клиентов и экономить время.",
       "Веду проект лично — от обсуждения задачи до запуска — и не передаю его в работу другим исполнителям.",
     ],
-    photo: "",
+    photo: "/images/studio-about.jpg",
     highlights: [
       { icon: "Sparkles", text: "10+ реализованных проектов" },
       { icon: "Target", text: "Разработка под вашу задачу" },
@@ -252,6 +252,7 @@ const studioConfig: SiteConfig = {
         problem: "Нужен был современный сайт с записью на консультацию и понятной структурой услуг.",
         description: "Разработала адаптивный сайт: услуги, отзывы и форма записи на консультацию.",
         result: "Психолог получил сайт, который вызывает доверие с первого экрана.",
+        image: "/images/portfolio-psychologist-site.png",
       },
       {
         icon: "Globe",
@@ -260,6 +261,7 @@ const studioConfig: SiteConfig = {
         problem: "Нужен был сайт с понятной структурой услуг и акцентом на доверие.",
         description: "Разработала сайт с чёткой подачей услуг и удобной формой обращения.",
         result: "Юрист получил сайт, который сразу показывает экспертизу и вызывает доверие.",
+        image: "/images/portfolio-lawyer-site.png",
       },
       {
         icon: "Bot",
@@ -269,6 +271,7 @@ const studioConfig: SiteConfig = {
         description:
           "Разработала Telegram Mini App с личным кабинетом, системой материалов и удобной навигацией.",
         result: "Пользователи регулярно взаимодействуют с контентом и возвращаются в приложение.",
+        image: "/images/portfolio-teplitsa.png",
       },
       {
         icon: "Compass",
@@ -277,6 +280,7 @@ const studioConfig: SiteConfig = {
         problem: "Нужен был инструмент для вовлечения новой аудитории и сбора заявок.",
         description: "Создала интерактивный тест с персональными результатами и рекомендациями.",
         result: "Тест вовлекает новых пользователей и знакомит их с проектом.",
+        image: "/images/portfolio-sezon-dushi.png",
       },
       {
         icon: "LayoutGrid",
@@ -285,6 +289,7 @@ const studioConfig: SiteConfig = {
         problem: "Рабочие процессы были разбросаны по десяткам таблиц и заметок.",
         description: "Разработала CRM в Notion: клиентская база, задачи, финансы, календарь.",
         result: "Все процессы собраны в одном месте — без хаоса в таблицах.",
+        image: "/images/portfolio-crm-notion.png",
       },
       {
         icon: "Bot",
@@ -302,6 +307,7 @@ const studioConfig: SiteConfig = {
         description:
           "Создала AI-ассистента для контент-планов, сценариев Reels, каруселей и заголовков.",
         result: "Эксперт получает готовые идеи и контент в разы быстрее.",
+        image: "/images/portfolio-ai-social.png",
       },
       {
         icon: "Brain",
@@ -311,6 +317,7 @@ const studioConfig: SiteConfig = {
         description:
           "Разработала AI-помощника, который помогает разобраться в вопросах и подготовиться к консультации.",
         result: "Клиенты быстрее получают ответы и понимают, какие документы готовить.",
+        image: "/images/portfolio-online-lawyer.png",
       },
       {
         icon: "Brain",
@@ -320,6 +327,7 @@ const studioConfig: SiteConfig = {
         description:
           "Создала AI-помощника, который составляет меню и список покупок с учётом предпочтений семьи.",
         result: "Экономия времени на планировании питания и организации закупок.",
+        image: "/images/portfolio-ai-nutrition.png",
       },
       {
         icon: "Brain",

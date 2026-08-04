@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
@@ -25,6 +26,17 @@ function PortfolioCard({
   return (
     <Reveal delay={delay}>
       <div className="flex h-full flex-col rounded-3xl border border-border bg-surface p-8">
+        {item.image && (
+          <div className="relative -mx-8 -mt-8 mb-6 aspect-[16/10] overflow-hidden rounded-t-3xl">
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
+          </div>
+        )}
         <div className="flex items-start justify-between gap-4">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
             <Icon className="h-6 w-6" />
