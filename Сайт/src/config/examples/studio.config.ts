@@ -12,15 +12,15 @@ import type { SiteConfig } from "@/types/config";
  * deliberately not the generic AI-purple gradient. Manrope + Inter, both
  * with full Cyrillic support.
  *
- * PLACEHOLDER DATA — replace before going live:
- * - `contacts.email` and `contacts.telegram` (no real handles were supplied)
- * - `contacts.max` (falls back to a tel: link — swap for the public MAX
- *   profile link once one exists)
- * - `seo.siteUrl` (placeholder domain)
+ * PLACEHOLDER DATA still pending — replace before going live:
+ * - `contacts.max` uses a tel: link (no public MAX profile link exists yet —
+ *   swap for the real one once you have it)
+ * - `seo.siteUrl` (placeholder domain — set once the real domain is chosen)
  * - `legal.entityName` (missing patronymic — add the full legal ФИО before
  *   publishing, it's required on the auto-generated legal pages)
  *
- * Everything else (phone, city, ИНН, legal status) is real, as supplied.
+ * Everything else (email, Telegram, phone, city, ИНН, legal status) is
+ * real, as supplied.
  */
 const studioConfig: SiteConfig = {
   brand: {
@@ -410,10 +410,10 @@ const studioConfig: SiteConfig = {
   contacts: {
     heading: "Контакты",
     subheading: "Расскажите о задаче — отвечу лично",
-    email: "hello@daryaradchenko.ru",
+    email: "Darya734@yandex.ru",
     phone: "+7 (909) 814-93-73",
     city: "Амурская область, г. Благовещенск",
-    telegram: "https://t.me/daryaradchenko",
+    telegram: "https://t.me/dashatulula",
     whatsapp: "",
     max: "tel:+79098149373",
     workingHours: "Пн–Пт, 10:00–19:00",
