@@ -45,6 +45,7 @@ export function Contacts() {
         <BookingConsent
           telegram={contacts.telegram}
           whatsapp={contacts.whatsapp}
+          max={contacts.max}
           consentLabel={contacts.consentLabel}
         />
       </Container>

@@ -4,6 +4,19 @@ All notable changes to Expert Platform v1 are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.5.0] — 2026-08-04
+
+### Added
+
+- **The studio's own site**: `src/config/examples/studio.config.ts` (`NEXT_PUBLIC_SITE_CONFIG=studio`) — Дарья Радченко's business-card/portfolio site (website development for experts and small business), built on the same template and mechanism as every client niche. Pine-green + copper palette, Manrope + Inter typography.
+- **`Portfolio` section** (`src/components/Portfolio.tsx`, optional `portfolio` field on `SiteConfig`): a case-study grid — each card leads with the problem it solved and expands ("Подробнее") to show what was built and the result. Omit the field to skip the section.
+- **`Comparison` section** (`src/components/Comparison.tsx`, optional `comparison` field): an "own site vs. website builder" table (own-site column / builder column + optional footnote). Omit the field to skip the section.
+- **`AddOns` section** (`src/components/AddOns.tsx`, optional `addOns` field): a small "what can be added later" chip list. Omit the field to skip the section.
+- **`helpWith` is now optional per niche** (`page.tsx` renders it only when present) — lets a niche skip it when `whyTrust` already covers the same ground (used by `studio.config.ts`).
+- **`contacts.max`** (optional): a MAX-messenger link (or a `tel:`/`mailto:` fallback) shown as a second booking button next to Telegram and as a footer icon; falls back to WhatsApp when unset. `contacts.whatsapp` can now be set to `""` to hide the WhatsApp button/icon entirely (used by `studio.config.ts`, which has no WhatsApp channel).
+- **`expert.experienceYears` and `expert.clientsHelped` are now optional**: Hero hides each floating stat badge when its value is absent, instead of forcing a niche to state a number it can't honestly back up.
+- `WhyTrust`'s grid now derives its column count from `items.length` (same pattern as `Process`), so a 6-item grid (used by `studio.config.ts`) lays out 3×2 instead of an uneven 4+2.
+
 ## [1.4.0] — 2026-07-27
 
 ### Added

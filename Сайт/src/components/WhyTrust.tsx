@@ -1,8 +1,17 @@
+import { cn } from "@/lib/utils";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { getIcon } from "@/lib/icons";
+
+const gridColsByCount: Record<number, string> = {
+  2: "lg:grid-cols-2",
+  3: "lg:grid-cols-3",
+  4: "lg:grid-cols-4",
+  5: "lg:grid-cols-5",
+  6: "lg:grid-cols-3",
+};
 
 export function WhyTrust() {
   const { whyTrust } = siteConfig;
@@ -13,7 +22,12 @@ export function WhyTrust() {
       <Container>
         <SectionHeading heading={whyTrust.heading} subheading={whyTrust.subheading} />
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className={cn(
+            "mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2",
+            gridColsByCount[whyTrust.items.length] ?? "lg:grid-cols-4"
+          )}
+        >
           {whyTrust.items.map((item, i) => {
             const Icon = getIcon(item.icon);
             return (

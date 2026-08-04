@@ -64,21 +64,25 @@ export function Hero() {
                 className="h-full w-full rounded-3xl"
               />
             </div>
-            <div
-              aria-hidden
-              className="absolute -bottom-6 -left-6 hidden animate-float rounded-2xl border border-border bg-background px-5 py-4 shadow-card sm:block"
-            >
-              <p className="font-heading text-lg font-bold text-ink">{expert.clientsHelped}</p>
-              <p className="text-xs text-muted">клиентов</p>
-            </div>
-            <div
-              aria-hidden
-              className="absolute -right-4 -top-4 hidden rounded-2xl border border-border bg-background px-5 py-4 shadow-card sm:block"
-              style={{ animationDelay: "1.5s" }}
-            >
-              <p className="font-heading text-lg font-bold text-ink">{expert.experienceYears} лет</p>
-              <p className="text-xs text-muted">опыта</p>
-            </div>
+            {expert.clientsHelped && (
+              <div
+                aria-hidden
+                className="absolute -bottom-6 -left-6 hidden animate-float rounded-2xl border border-border bg-background px-5 py-4 shadow-card sm:block"
+              >
+                <p className="font-heading text-lg font-bold text-ink">{expert.clientsHelped}</p>
+                <p className="text-xs text-muted">клиентов</p>
+              </div>
+            )}
+            {expert.experienceYears != null && (
+              <div
+                aria-hidden
+                className="absolute -right-4 -top-4 hidden rounded-2xl border border-border bg-background px-5 py-4 shadow-card sm:block"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <p className="font-heading text-lg font-bold text-ink">{expert.experienceYears} лет</p>
+                <p className="text-xs text-muted">опыта</p>
+              </div>
+            )}
           </div>
         </div>
       </Container>

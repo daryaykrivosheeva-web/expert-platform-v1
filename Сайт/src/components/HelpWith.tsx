@@ -6,6 +6,7 @@ import { getIcon } from "@/lib/icons";
 
 export function HelpWith() {
   const { helpWith } = siteConfig;
+  if (!helpWith) return null;
 
   return (
     <section id="help-with" className="bg-surface py-20 sm:py-28">

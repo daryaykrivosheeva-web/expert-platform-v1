@@ -4,6 +4,7 @@ import businessCoachConfig from "./examples/business-coach.config";
 import nutritionistConfig from "./examples/nutritionist.config";
 import astrologerConfig from "./examples/astrologer.config";
 import lawyerConfig from "./examples/lawyer.config";
+import studioConfig from "./examples/studio.config";
 
 /**
  * SINGLE SOURCE OF TRUTH.
@@ -28,6 +29,7 @@ const configsByKey: Record<string, SiteConfig> = {
   nutritionist: nutritionistConfig,
   astrologer: astrologerConfig,
   lawyer: lawyerConfig,
+  studio: studioConfig,
 };
 
 const activeKey = process.env.NEXT_PUBLIC_SITE_CONFIG ?? "psychologist";

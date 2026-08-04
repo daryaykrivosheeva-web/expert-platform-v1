@@ -9,13 +9,18 @@ import { cn } from "@/lib/utils";
 export function BookingConsent({
   telegram,
   whatsapp,
+  max,
   consentLabel,
 }: {
   telegram: string;
   whatsapp: string;
+  max?: string;
   consentLabel: string;
 }) {
   const [checked, setChecked] = useState(false);
+  const secondary = max
+    ? { href: max, label: "Написать в MAX" }
+    : { href: whatsapp, label: "Написать в WhatsApp" };
 
   return (
     <div className="mt-8 flex flex-col items-center gap-5">
@@ -46,18 +51,20 @@ export function BookingConsent({
           <Send className="h-4 w-4" />
           Написать в Telegram
         </Button>
-        <Button
-          href={whatsapp}
-          target="_blank"
-          variant="secondary"
-          className={cn("w-full sm:w-auto", !checked && "pointer-events-none opacity-40")}
-          onClick={(e) => {
-            if (!checked) e.preventDefault();
-          }}
-        >
-          <MessageCircle className="h-4 w-4" />
-          Написать в WhatsApp
-        </Button>
+        {secondary.href && (
+          <Button
+            href={secondary.href}
+            target="_blank"
+            variant="secondary"
+            className={cn("w-full sm:w-auto", !checked && "pointer-events-none opacity-40")}
+            onClick={(e) => {
+              if (!checked) e.preventDefault();
+            }}
+          >
+            <MessageCircle className="h-4 w-4" />
+            {secondary.label}
+          </Button>
+        )}
       </div>
     </div>
   );

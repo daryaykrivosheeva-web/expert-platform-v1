@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Testimonials() {
   const { testimonials } = siteConfig;
+  if (testimonials.items.length === 0) return null;
 
   return (
     <section id="testimonials" className="py-20 sm:py-28">

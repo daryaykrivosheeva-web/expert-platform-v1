@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export function Services() {
   const { services } = siteConfig;
+  if (services.items.length === 0) return null;
 
   return (
     <section id="services" className="py-20 sm:py-28">

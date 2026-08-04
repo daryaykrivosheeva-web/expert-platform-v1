@@ -41,15 +41,28 @@ export function Footer() {
             >
               <Send className="h-4 w-4" />
             </a>
-            <a
-              href={contacts.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
-            >
-              <MessageCircle className="h-4 w-4" />
-            </a>
+            {contacts.whatsapp && (
+              <a
+                href={contacts.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
+              >
+                <MessageCircle className="h-4 w-4" />
+              </a>
+            )}
+            {contacts.max && (
+              <a
+                href={contacts.max}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAX"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
+              >
+                <MessageCircle className="h-4 w-4" />
+              </a>
+            )}
             {contacts.instagram && (
               <a
                 href={contacts.instagram}

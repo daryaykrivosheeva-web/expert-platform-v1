@@ -26,8 +26,10 @@ export interface ExpertConfig {
   bio: string[];
   photo: string;
   credentials: string[];
-  experienceYears: number;
-  clientsHelped: string;
+  /** Optional — omit if there's no honest number to show yet; Hero hides the floating badge. */
+  experienceYears?: number;
+  /** Optional — omit if there's no honest number to show yet; Hero hides the floating badge. */
+  clientsHelped?: string;
 }
 
 export interface BrandConfig {
@@ -163,10 +165,65 @@ export interface ContactsConfig {
   phone: string;
   city: string;
   telegram: string;
+  /** Set to "" to omit the WhatsApp button/icon (e.g. a niche that uses MAX instead). */
   whatsapp: string;
+  /** Optional MAX messenger link (or a tel:/mailto: fallback if there's no public profile yet). */
+  max?: string;
   instagram?: string;
   workingHours: string;
   consentLabel: string;
+}
+
+export interface PortfolioItem {
+  icon: string;
+  title: string;
+  category: string;
+  /** The one-sentence answer to "what task did this project solve?" — shown on the card front. */
+  problem: string;
+  /** What was actually built — shown when the card is expanded. */
+  description: string;
+  /** The outcome — shown when the card is expanded. */
+  result: string;
+}
+
+export interface PortfolioConfig {
+  heading: string;
+  subheading: string;
+  items: PortfolioItem[];
+}
+
+export interface ComparisonRow {
+  label: string;
+  ownSite: string;
+  builder: string;
+}
+
+/**
+ * Optional "own site vs. website builder" comparison table. Omit entirely
+ * to skip the section — most niches don't need it.
+ */
+export interface ComparisonConfig {
+  heading: string;
+  subheading: string;
+  ownSiteLabel: string;
+  builderLabel: string;
+  rows: ComparisonRow[];
+  footnote?: string;
+}
+
+export interface AddOnItem {
+  icon: string;
+  label: string;
+}
+
+/**
+ * Optional "what can be added later" teaser list. Omit entirely to skip
+ * the section.
+ */
+export interface AddOnsConfig {
+  heading: string;
+  subheading: string;
+  items: AddOnItem[];
 }
 
 export interface FooterConfig {
@@ -207,22 +264,58 @@ export interface SeoConfig {
   themeColor: string;
 }
 
+/**
+ * Keys of every orderable page section, matching `sectionComponents` in
+ * `src/app/page.tsx`. Used by the optional `pageOrder` field below.
+ */
+export type SectionKey =
+  | "hero"
+  | "about"
+  | "helpWith"
+  | "services"
+  | "whyTrust"
+  | "comparison"
+  | "portfolio"
+  | "process"
+  | "addOns"
+  | "testimonials"
+  | "faq"
+  | "finalCta"
+  | "contacts";
+
 export interface SiteConfig {
   brand: BrandConfig;
   expert: ExpertConfig;
   nav: NavLink[];
   hero: HeroConfig;
   about: AboutConfig;
-  helpWith: HelpWithConfig;
+  /** Optional "what I help with" grid. Omit entirely to skip the section (e.g. when whyTrust already covers it). */
+  helpWith?: HelpWithConfig;
   services: ServicesConfig;
   /** Optional trust-factors grid. Omit entirely to skip the section. */
   whyTrust?: WhyTrustConfig;
+  /** Optional case-study grid. Omit entirely to skip the section. */
+  portfolio?: PortfolioConfig;
+  /** Optional own-site-vs-builder comparison table. Omit entirely to skip the section. */
+  comparison?: ComparisonConfig;
   process: ProcessConfig;
   testimonials: TestimonialsConfig;
+  /** Optional "what can be added later" teaser list. Omit entirely to skip the section. */
+  addOns?: AddOnsConfig;
   faq: FaqConfig;
   finalCta: FinalCtaConfig;
   contacts: ContactsConfig;
   footer: FooterConfig;
   seo: SeoConfig;
   legal: LegalConfig;
+  /**
+   * Optional override of the section order in `<main>`. Omit entirely to
+   * keep the default order (the exact order every existing niche already
+   * renders in — changing the default would silently reshuffle the live
+   * psychologist deployment and every other niche). Sections not listed
+   * here are simply not rendered; each section component already no-ops
+   * (returns null) when its own config data is missing/empty, so listing
+   * a section a niche doesn't use is harmless.
+   */
+  pageOrder?: SectionKey[];
 }
