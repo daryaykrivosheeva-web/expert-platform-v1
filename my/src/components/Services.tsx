@@ -20,10 +20,10 @@ export function Services() {
             <Reveal key={item.title} delay={i * 0.05}>
               <div
                 className={cn(
-                  "flex h-full flex-col rounded-3xl border p-8",
+                  "flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-1",
                   item.highlighted
-                    ? "border-primary bg-ink text-white shadow-lift"
-                    : "border-border bg-background shadow-card"
+                    ? "border-primary bg-ink text-white shadow-lift hover:shadow-[0_28px_70px_-20px_rgba(0,0,0,0.5)]"
+                    : "border-border bg-background shadow-card hover:border-primary/30 hover:shadow-lift"
                 )}
               >
                 {item.highlighted && (

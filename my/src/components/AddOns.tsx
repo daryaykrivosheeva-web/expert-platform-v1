@@ -20,7 +20,7 @@ export function AddOns() {
               return (
                 <span
                   key={item.label}
-                  className="flex items-center gap-2.5 rounded-full border border-border bg-background px-5 py-3 text-sm font-medium text-ink"
+                  className="flex items-center gap-2.5 rounded-full border border-border bg-background px-5 py-3 text-sm font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-card"
                 >
                   <Icon className="h-4 w-4 text-primary" />
                   {item.label}

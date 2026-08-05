@@ -1,4 +1,8 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { easeOut } from "@/lib/motion";
 
 export function SectionHeading({
   eyebrow,
@@ -13,8 +17,14 @@ export function SectionHeading({
   align?: "center" | "left";
   className?: string;
 }) {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <div
+    <motion.div
+      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, ease: easeOut }}
       className={cn(
         "max-w-2xl",
         align === "center" ? "mx-auto text-center" : "text-left",
@@ -32,6 +42,6 @@ export function SectionHeading({
       {subheading && (
         <p className="mt-4 text-lg leading-relaxed text-muted">{subheading}</p>
       )}
-    </div>
+    </motion.div>
   );
 }

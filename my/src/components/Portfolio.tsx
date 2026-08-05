@@ -25,14 +25,14 @@ function PortfolioCard({
 
   return (
     <Reveal delay={delay}>
-      <div className="flex h-full flex-col rounded-3xl border border-border bg-surface p-8">
+      <div className="group flex h-full flex-col rounded-3xl border border-border bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift">
         {item.image && (
           <div className="relative -mx-8 -mt-8 mb-6 aspect-[16/10] overflow-hidden rounded-t-3xl">
             <Image
               src={item.image}
               alt={item.title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, 50vw"
             />
           </div>
