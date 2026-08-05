@@ -43,17 +43,19 @@ export function Hero() {
               </Button>
             </div>
 
-            <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-border pt-8">
-              {hero.stats.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="sr-only">{stat.label}</dt>
-                  <dd className="font-heading text-2xl font-bold text-ink sm:text-3xl">
-                    {stat.value}
-                  </dd>
-                  <p className="mt-1 text-sm text-muted">{stat.label}</p>
-                </div>
-              ))}
-            </dl>
+            {hero.stats.length > 0 && (
+              <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-border pt-8">
+                {hero.stats.map((stat) => (
+                  <div key={stat.label}>
+                    <dt className="sr-only">{stat.label}</dt>
+                    <dd className="font-heading text-2xl font-bold text-ink sm:text-3xl">
+                      {stat.value}
+                    </dd>
+                    <p className="mt-1 text-sm text-muted">{stat.label}</p>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
