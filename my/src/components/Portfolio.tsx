@@ -1,14 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { getIcon } from "@/lib/icons";
-import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import type { PortfolioItem } from "@/types/config";
 
@@ -21,13 +16,14 @@ function PortfolioCard({
   Icon: LucideIcon;
   delay: number;
 }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <Reveal delay={delay}>
-      <div className="group flex h-full flex-col rounded-3xl border border-border bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift">
+      <div
+        tabIndex={0}
+        className="group flex h-full flex-col rounded-3xl border border-charcoal bg-ash-gray p-8 outline-none transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lift focus-visible:-translate-y-1 focus-visible:border-ink focus-visible:shadow-lift"
+      >
         {item.image && (
-          <div className="relative -mx-8 -mt-8 mb-6 aspect-[16/10] overflow-hidden rounded-t-3xl">
+          <div className="relative -mx-8 -mt-8 mb-6 aspect-[16/10] overflow-hidden">
             <Image
               src={item.image}
               alt={item.title}
@@ -38,40 +34,28 @@ function PortfolioCard({
           </div>
         )}
         <div className="flex items-start justify-between gap-4">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-obsidian text-volt">
             <Icon className="h-6 w-6" />
           </span>
-          <span className="rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted">
+          <span className="rounded-full border border-charcoal bg-concrete px-3 py-1 text-xs font-semibold uppercase tracking-wider text-steel">
             {item.category}
           </span>
         </div>
 
         <h3 className="mt-6 font-heading text-lg font-semibold text-ink">{item.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{item.problem}</p>
+        <p className="mt-2 text-sm leading-relaxed text-steel">{item.problem}</p>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          className="mt-6 flex items-center gap-1.5 text-sm font-semibold text-primary"
-        >
-          Подробнее
-          <ChevronDown
-            className={cn("h-4 w-4 transition-transform duration-300", open && "rotate-180")}
-          />
-        </button>
+        <span className="mt-6 font-mono text-[11px] uppercase tracking-wider text-steel">
+          Наведите для подробностей
+        </span>
 
-        <div
-          className={cn(
-            "grid overflow-hidden transition-all duration-300",
-            open ? "grid-rows-[1fr] pt-4 opacity-100" : "grid-rows-[0fr] opacity-0"
-          )}
-        >
-          <div className="min-h-0 space-y-3 border-t border-border pt-4 text-sm leading-relaxed">
+        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:pt-4 group-hover:opacity-100 group-focus-visible:grid-rows-[1fr] group-focus-visible:pt-4 group-focus-visible:opacity-100">
+          <div className="min-h-0 space-y-3 border-t border-charcoal pt-4 text-sm leading-relaxed">
             <p className="text-ink">
               <span className="font-semibold">Что сделано: </span>
               {item.description}
             </p>
-            <p className="text-muted">
+            <p className="text-steel">
               <span className="font-semibold text-ink">Результат: </span>
               {item.result}
             </p>

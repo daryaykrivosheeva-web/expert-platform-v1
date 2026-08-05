@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import siteConfig from "@/config/site.config";
-import { fontVariables, resolveFontVar } from "@/lib/fonts";
+import { fontVariables } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -41,17 +41,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const { colors } = siteConfig.brand;
 
   const cssVars = {
-    "--color-primary": colors.primary,
-    "--color-primary-dark": colors.primaryDark,
-    "--color-secondary": colors.secondary,
-    "--color-accent": colors.accent,
-    "--color-background": colors.background,
-    "--color-surface": colors.surface,
-    "--color-text": colors.text,
-    "--color-muted": colors.muted,
-    "--color-border": colors.border,
-    "--font-heading": resolveFontVar(siteConfig.brand.fonts.heading),
-    "--font-body": resolveFontVar(siteConfig.brand.fonts.body),
+    "--color-concrete": colors.concrete,
+    "--color-ash-gray": colors.ashGray,
+    "--color-bone": colors.bone,
+    "--color-smoke": colors.smoke,
+    "--color-graphite": colors.graphite,
+    "--color-steel": colors.steel,
+    "--color-charcoal": colors.charcoal,
+    "--color-ink": colors.ink,
+    "--color-obsidian": colors.obsidian,
+    "--color-volt": colors.volt,
+    "--color-ultraviolet": colors.ultraviolet,
+    "--color-vermillion": colors.vermillion,
   } as React.CSSProperties;
 
   return (

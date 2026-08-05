@@ -17,8 +17,8 @@ export function Testimonials() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.items.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.05}>
-              <div className="flex h-full flex-col rounded-3xl border border-border bg-background p-8 shadow-card">
-                <div className="flex gap-1 text-accent">
+              <div className="flex h-full flex-col rounded-3xl border border-charcoal bg-concrete p-8 shadow-card">
+                <div className="flex gap-1 text-volt">
                   {Array.from({ length: item.rating }).map((_, idx) => (
                     <Star key={idx} className="h-4 w-4 fill-current" />
                   ))}
@@ -35,7 +35,7 @@ export function Testimonials() {
                   />
                   <div>
                     <p className="text-sm font-semibold text-ink">{item.name}</p>
-                    <p className="text-xs text-muted">{item.role}</p>
+                    <p className="text-xs text-steel">{item.role}</p>
                   </div>
                 </div>
               </div>

@@ -12,11 +12,11 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-surface py-20 sm:py-28">
+    <section id="faq" className="bg-ash-gray py-20 sm:py-28">
       <Container>
         <SectionHeading heading={faq.heading} subheading={faq.subheading} />
 
-        <div className="mx-auto mt-14 max-w-3xl divide-y divide-border rounded-3xl border border-border bg-background">
+        <div className="mx-auto mt-14 max-w-3xl divide-y divide-charcoal rounded-3xl border border-charcoal bg-concrete">
           {faq.items.map((item, i) => {
             const isOpen = openIndex === i;
             return (
@@ -31,7 +31,7 @@ export function FAQ() {
                   </span>
                   <Plus
                     className={cn(
-                      "h-5 w-5 shrink-0 text-primary transition-transform duration-300",
+                      "h-5 w-5 shrink-0 text-ink transition-transform duration-300",
                       isOpen && "rotate-45"
                     )}
                   />
@@ -43,7 +43,7 @@ export function FAQ() {
                   )}
                 >
                   <div className="min-h-0">
-                    <p className="text-sm leading-relaxed text-muted">{item.answer}</p>
+                    <p className="text-sm leading-relaxed text-steel">{item.answer}</p>
                   </div>
                 </div>
               </div>

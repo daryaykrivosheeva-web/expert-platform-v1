@@ -94,12 +94,12 @@ function HeroPhoto({ src, name }: { src?: string; name: string }) {
     >
       <motion.div
         style={tiltEnabled ? { rotateX, rotateY, transformStyle: "preserve-3d" } : undefined}
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-lift"
+        className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-charcoal shadow-lift"
       >
         <Avatar src={src} name={name} className="h-full w-full rounded-3xl" />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10"
+          className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-ink/10"
         />
       </motion.div>
     </motion.div>
@@ -115,12 +115,6 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative overflow-hidden pb-20 pt-40 sm:pb-28 sm:pt-48">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="motion-safe:animate-aurora absolute left-1/2 top-[-18rem] h-[36rem] w-[36rem] -translate-x-[65%] rounded-full bg-primary/25 blur-[110px]" />
-        <div className="motion-safe:animate-aurora-slow absolute right-[-10rem] top-[-6rem] h-[28rem] w-[28rem] rounded-full bg-secondary/20 blur-[110px]" />
-        <div className="absolute inset-0 bg-noise opacity-[0.03]" />
-      </div>
-
       <Container>
         <motion.div
           variants={containerVariants}
@@ -131,25 +125,25 @@ export function Hero() {
           <div>
             <motion.span
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary"
+              className="inline-flex items-center gap-2 rounded-full bg-volt px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink"
             >
               <Sparkles className="h-3.5 w-3.5" />
               {hero.eyebrow}
             </motion.span>
 
-            <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-heading text-4xl font-black leading-[0.95] tracking-tight text-ink sm:text-5xl lg:text-6xl lg:tracking-[-0.03em]">
               <motion.span variants={itemVariants} className="block">
                 <RevealHeadline text={hero.headline} reduceMotion={!!reduceMotion} />
               </motion.span>
               <motion.span
                 variants={itemVariants}
-                className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                className="block underline decoration-volt decoration-[6px] underline-offset-8"
               >
                 <RevealHeadline text={hero.highlight} reduceMotion={!!reduceMotion} />
               </motion.span>
             </h1>
 
-            <motion.p variants={itemVariants} className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+            <motion.p variants={itemVariants} className="mt-6 max-w-xl text-lg leading-relaxed text-steel">
               {hero.subheadline}
             </motion.p>
 
@@ -166,7 +160,7 @@ export function Hero() {
             {hero.stats.length > 0 && (
               <motion.dl
                 variants={itemVariants}
-                className="mt-14 grid grid-cols-3 gap-6 border-t border-border pt-8"
+                className="mt-14 grid grid-cols-3 gap-6 border-t border-charcoal pt-8"
               >
                 {hero.stats.map((stat) => (
                   <div key={stat.label}>
@@ -174,7 +168,7 @@ export function Hero() {
                     <dd className="font-heading text-2xl font-bold text-ink sm:text-3xl">
                       {stat.value}
                     </dd>
-                    <p className="mt-1 text-sm text-muted">{stat.label}</p>
+                    <p className="mt-1 text-sm text-steel">{stat.label}</p>
                   </div>
                 ))}
               </motion.dl>

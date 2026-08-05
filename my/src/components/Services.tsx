@@ -22,12 +22,12 @@ export function Services() {
                 className={cn(
                   "flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-1",
                   item.highlighted
-                    ? "border-primary bg-ink text-white shadow-lift hover:shadow-[0_28px_70px_-20px_rgba(0,0,0,0.5)]"
-                    : "border-border bg-background shadow-card hover:border-primary/30 hover:shadow-lift"
+                    ? "border-obsidian bg-obsidian text-concrete shadow-lift hover:shadow-[0_28px_70px_-20px_rgba(0,0,0,0.5)]"
+                    : "border-charcoal bg-concrete shadow-card hover:border-ink hover:shadow-lift"
                 )}
               >
                 {item.highlighted && (
-                  <span className="mb-4 inline-block w-fit rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                  <span className="mb-4 inline-block w-fit rounded-full bg-volt px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-wider text-ink">
                     Популярный выбор
                   </span>
                 )}
@@ -35,7 +35,7 @@ export function Services() {
                 <h3
                   className={cn(
                     "font-heading text-xl font-semibold",
-                    item.highlighted ? "text-white" : "text-ink"
+                    item.highlighted ? "text-concrete" : "text-ink"
                   )}
                 >
                   {item.title}
@@ -43,7 +43,7 @@ export function Services() {
                 <p
                   className={cn(
                     "mt-2 text-sm leading-relaxed",
-                    item.highlighted ? "text-white/70" : "text-muted"
+                    item.highlighted ? "text-concrete/70" : "text-steel"
                   )}
                 >
                   {item.description}
@@ -52,12 +52,12 @@ export function Services() {
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="font-heading text-3xl font-bold">{item.price}</span>
                   {item.priceNote && (
-                    <span className={cn("text-sm", item.highlighted ? "text-white/60" : "text-muted")}>
+                    <span className={cn("text-sm", item.highlighted ? "text-concrete/60" : "text-steel")}>
                       {item.priceNote}
                     </span>
                   )}
                 </div>
-                <p className={cn("mt-1 text-xs", item.highlighted ? "text-white/60" : "text-muted")}>
+                <p className={cn("mt-1 text-xs", item.highlighted ? "text-concrete/60" : "text-steel")}>
                   {item.duration}
                 </p>
 
@@ -67,10 +67,10 @@ export function Services() {
                       <Check
                         className={cn(
                           "mt-0.5 h-4 w-4 shrink-0",
-                          item.highlighted ? "text-secondary" : "text-primary"
+                          item.highlighted ? "text-volt" : "text-ink"
                         )}
                       />
-                      <span className={item.highlighted ? "text-white/85" : "text-ink"}>
+                      <span className={item.highlighted ? "text-concrete/85" : "text-ink"}>
                         {feature}
                       </span>
                     </li>
@@ -80,7 +80,7 @@ export function Services() {
                 <Button
                   href="#contacts"
                   variant={item.highlighted ? "primary" : "secondary"}
-                  className={cn("mt-8 w-full", item.highlighted && "!bg-white !text-ink hover:!bg-white/90")}
+                  className="mt-8 w-full"
                 >
                   {item.ctaText}
                 </Button>
@@ -90,7 +90,7 @@ export function Services() {
         </div>
 
         {services.footnote && (
-          <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-muted">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-steel">
             {services.footnote}
           </p>
         )}
