@@ -37,6 +37,9 @@ const config: Config = {
       animation: {
         "fade-up": "fadeUp 0.7s ease-out forwards",
         float: "float 6s ease-in-out infinite",
+        aurora: "aurora 22s ease-in-out infinite",
+        "aurora-slow": "aurora 30s ease-in-out infinite reverse",
+        "draw-line": "drawLine 1.2s ease-out forwards",
       },
       keyframes: {
         fadeUp: {
@@ -47,6 +50,19 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-12px)" },
         },
+        aurora: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(4%, 6%) scale(1.08)" },
+          "66%": { transform: "translate(-3%, -4%) scale(0.96)" },
+        },
+        drawLine: {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
+        },
+      },
+      backgroundImage: {
+        noise:
+          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
       },
       maxWidth: {
         "8xl": "90rem",

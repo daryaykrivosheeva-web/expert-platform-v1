@@ -1,8 +1,12 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { easeOut } from "@/lib/motion";
 
 const gridColsByCount: Record<number, string> = {
   2: "lg:grid-cols-2",
@@ -14,6 +18,7 @@ const gridColsByCount: Record<number, string> = {
 
 export function Process() {
   const { process } = siteConfig;
+  const reduceMotion = useReducedMotion();
 
   return (
     <section id="process" className="bg-surface py-20 sm:py-28">
@@ -26,12 +31,17 @@ export function Process() {
             gridColsByCount[process.steps.length] ?? "lg:grid-cols-5"
           )}
         >
-          <div
+          <motion.div
             aria-hidden
-            className="absolute left-0 right-0 top-6 hidden h-px bg-border lg:block"
+            initial={reduceMotion ? false : { scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.1, ease: easeOut }}
+            style={{ transformOrigin: "left" }}
+            className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-primary via-primary/60 to-secondary lg:block"
           />
           {process.steps.map((step, i) => (
-            <Reveal key={step.title} delay={i * 0.06} className="relative">
+            <Reveal key={step.title} delay={i * 0.1} className="relative">
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-primary font-heading text-lg font-bold text-white shadow-soft">
                 {i + 1}
               </div>
