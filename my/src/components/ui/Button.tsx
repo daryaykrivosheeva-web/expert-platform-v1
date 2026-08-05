@@ -9,11 +9,9 @@ import type { MouseEvent, ReactNode } from "react";
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-primary text-white shadow-soft hover:bg-primary-dark hover:shadow-lift active:scale-[0.98]",
-  secondary:
-    "bg-surface text-ink border border-border hover:border-primary/40 hover:bg-primary/5 active:scale-[0.98]",
-  ghost: "text-ink hover:bg-surface active:scale-[0.98]",
+  primary: "bg-volt text-ink hover:shadow-lift active:scale-[0.98]",
+  secondary: "bg-obsidian text-concrete hover:shadow-lift active:scale-[0.98]",
+  ghost: "text-ink border border-charcoal hover:bg-ash-gray active:scale-[0.98]",
 };
 
 const MotionLink = motion.create(Link);
@@ -65,7 +63,7 @@ export function Button({
       onMouseLeave={handleMouseLeave}
       style={magnetic ? { x: springX, y: springY } : undefined}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-200",
+        "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-200",
         variantStyles[variant],
         className
       )}

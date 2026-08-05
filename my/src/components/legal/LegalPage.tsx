@@ -8,7 +8,7 @@ export function LegalPage({ document }: { document: LegalDocument }) {
         <h1 className="font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           {document.title}
         </h1>
-        <p className="mt-3 text-sm text-muted">{document.updatedAtLabel}</p>
+        <p className="mt-3 text-sm text-steel">{document.updatedAtLabel}</p>
 
         <div className="mt-12 space-y-10">
           {document.sections.map((section) => (
@@ -18,7 +18,7 @@ export function LegalPage({ document }: { document: LegalDocument }) {
               </h2>
               <div className="mt-3 space-y-3">
                 {section.paragraphs.map((paragraph, i) => (
-                  <p key={i} className="text-sm leading-relaxed text-muted">
+                  <p key={i} className="text-sm leading-relaxed text-steel">
                     {paragraph}
                   </p>
                 ))}

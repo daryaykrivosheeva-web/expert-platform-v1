@@ -24,12 +24,12 @@ export function BookingConsent({
 
   return (
     <div className="mt-8 flex flex-col items-center gap-5">
-      <label className="flex max-w-xl items-start gap-3 text-left text-sm text-muted">
+      <label className="flex max-w-xl items-start gap-3 text-left text-sm text-steel">
         <input
           type="checkbox"
           checked={checked}
           onChange={(e) => setChecked(e.target.checked)}
-          className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-primary)]"
+          className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-volt)]"
         />
         <span>
           {consentLabel}{" "}

@@ -9,14 +9,14 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="border-t border-charcoal py-12">
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <div>
             <Link href="#hero" className="font-heading text-lg font-bold text-ink">
               {brand.logoText}
             </Link>
-            <p className="mt-2 max-w-xs text-sm text-muted">{footer.description}</p>
+            <p className="mt-2 max-w-xs text-sm text-steel">{footer.description}</p>
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
@@ -24,7 +24,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted transition-colors hover:text-ink"
+                className="text-sm text-steel transition-colors hover:text-ink"
               >
                 {link.label}
               </Link>
@@ -37,7 +37,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal text-steel transition-colors hover:border-ink hover:text-ink"
             >
               <Send className="h-4 w-4" />
             </a>
@@ -47,7 +47,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal text-steel transition-colors hover:border-ink hover:text-ink"
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
@@ -58,7 +58,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="MAX"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal text-steel transition-colors hover:border-ink hover:text-ink"
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
@@ -69,7 +69,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-primary/40 hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal text-steel transition-colors hover:border-ink hover:text-ink"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -77,27 +77,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6">
+        <div className="mt-10 border-t border-charcoal pt-6">
           <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-muted transition-colors hover:text-ink"
+                className="text-xs text-steel transition-colors hover:text-ink"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="mt-4 text-center text-xs text-muted">
+          <div className="mt-4 text-center text-xs text-steel">
             © {year} {footer.legalName}. Все права защищены.
           </div>
-          <div className="mt-1 text-center text-xs text-muted">
+          <div className="mt-1 text-center text-xs text-steel">
             {legal.entityLabel} {legal.entityName} · ИНН {legal.inn}
             {legal.ogrn ? ` · ${legal.entityType === "llc" ? "ОГРН" : "ОГРНИП"} ${legal.ogrn}` : ""}
           </div>
-          <p className="mx-auto mt-3 max-w-xl text-center text-xs text-muted">
+          <p className="mx-auto mt-3 max-w-xl text-center text-xs text-steel">
             {legal.disclaimer}
           </p>
         </div>

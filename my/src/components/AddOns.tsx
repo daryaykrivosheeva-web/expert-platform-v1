@@ -14,15 +14,15 @@ export function AddOns() {
         <SectionHeading heading={addOns.heading} subheading={addOns.subheading} />
 
         <Reveal className="mt-12">
-          <div className="flex flex-wrap items-center justify-center gap-4 rounded-3xl border border-border bg-surface p-8 sm:p-10">
+          <div className="flex flex-wrap items-center justify-center gap-4 rounded-3xl border border-charcoal bg-ash-gray p-8 sm:p-10">
             {addOns.items.map((item) => {
               const Icon = getIcon(item.icon);
               return (
                 <span
                   key={item.label}
-                  className="flex items-center gap-2.5 rounded-full border border-border bg-background px-5 py-3 text-sm font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-card"
+                  className="flex items-center gap-2.5 rounded-full border border-charcoal bg-concrete px-5 py-3 text-sm font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-ink hover:shadow-card"
                 >
-                  <Icon className="h-4 w-4 text-primary" />
+                  <Icon className="h-4 w-4 text-ink" />
                   {item.label}
                 </span>
               );

@@ -4,18 +4,26 @@
  * see src/config/site.config.ts for the single file to edit.
  */
 
-export type FontKey = "inter" | "manrope" | "sora" | "playfair" | "poppins";
-
+/**
+ * Osmo-style token set: a near-monochrome concrete canvas, sharp-radius
+ * content tiles, and exactly three chromatic accents used the way the
+ * design system prescribes — Volt for CTAs/badges, Ultraviolet for the one
+ * featured surface per section, Vermillion for handwritten annotations only
+ * (never a fill or background).
+ */
 export interface BrandColors {
-  primary: string;
-  primaryDark: string;
-  secondary: string;
-  accent: string;
-  background: string;
-  surface: string;
-  text: string;
-  muted: string;
-  border: string;
+  concrete: string;
+  ashGray: string;
+  bone: string;
+  smoke: string;
+  graphite: string;
+  steel: string;
+  charcoal: string;
+  ink: string;
+  obsidian: string;
+  volt: string;
+  ultraviolet: string;
+  vermillion: string;
 }
 
 export interface ExpertConfig {
@@ -36,10 +44,6 @@ export interface BrandConfig {
   logoText: string;
   logoImage?: string;
   colors: BrandColors;
-  fonts: {
-    heading: FontKey;
-    body: FontKey;
-  };
 }
 
 export interface NavLink {

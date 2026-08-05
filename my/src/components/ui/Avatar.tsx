@@ -28,15 +28,8 @@ export function Avatar({
   }
 
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center bg-gradient-to-br from-primary to-secondary text-white",
-        className
-      )}
-    >
-      <span className="font-heading text-4xl font-semibold tracking-tight">
-        {getInitials(name)}
-      </span>
+    <div className={cn("flex items-center justify-center bg-obsidian text-volt", className)}>
+      <span className="font-heading text-4xl font-bold tracking-tight">{getInitials(name)}</span>
     </div>
   );
 }
