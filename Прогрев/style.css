@@ -1,0 +1,504 @@
+/* ---------------------------------------------------------
+   Даша Радченко — лендинг «5 готовых инструментов»
+   Спокойный, светлый дизайн. Приглушённая зелёно-тиловая палитра.
+--------------------------------------------------------- */
+
+:root {
+  --bg: #f6f9f7;
+  --bg-soft: #eef4f0;
+  --card: #ffffff;
+  --text: #1f2b27;
+  --text-muted: #55645c;
+  --accent: #3c7a6a;
+  --accent-dark: #2c5c4f;
+  --accent-soft: #dbeae3;
+  --border: #dee7e1;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 12px 32px -18px rgba(31, 43, 39, 0.25);
+  --container: 1040px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 88px 0;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 56px 0;
+  }
+}
+
+.section-alt {
+  background: var(--bg-soft);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(26px, 3.4vw, 36px);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+p {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+}
+
+.lede {
+  font-size: 19px;
+  max-width: 640px;
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-head p {
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  padding: 28px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 14px 28px -12px rgba(44, 92, 79, 0.55);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--accent-dark);
+  border: 1.5px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-note {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 40px 0 88px;
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero .lede {
+  margin: 0 auto 36px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badges {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.badge {
+  font-size: 14px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+/* ---------- Lead magnet strip ---------- */
+
+.lead-magnet {
+  background: linear-gradient(135deg, var(--accent-soft), var(--bg-soft));
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.lead-magnet-text {
+  max-width: 520px;
+}
+
+.lead-magnet h3 {
+  margin-bottom: 8px;
+}
+
+.lead-magnet p {
+  margin-bottom: 0;
+}
+
+/* ---------- Why / Problem (text blocks) ---------- */
+
+.text-block {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.text-block .eyebrow {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-block-head {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.text-block p {
+  font-size: 17px;
+}
+
+.text-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- What's inside grid ---------- */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+}
+
+.tool-card:first-child {
+  grid-column: 1 / -1;
+}
+
+.tool-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.tool-card p {
+  margin-bottom: 0;
+  font-size: 15.5px;
+}
+
+/* ---------- Pricing ---------- */
+
+.pricing-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 48px;
+  text-align: center;
+}
+
+.price {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--accent-dark);
+  margin: 4px 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.price-note {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.price-list {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.price-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15.5px;
+  color: var(--text);
+}
+
+.price-check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-name {
+  font-weight: 700;
+}
+
+.footer-status {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--accent-dark);
+}
+
+/* ---------- Entrance animation (runs on load, not on scroll —
+   content must never depend on scroll position or JS to be visible) ---------- */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  animation: fade-in-up 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+}
+
+/* ---------- Legal pages ---------- */
+
+.legal-page {
+  padding: 64px 0 96px;
+}
+
+.legal-page .container {
+  max-width: 760px;
+}
+
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.legal-back:hover {
+  color: var(--accent-dark);
+}
+
+.legal-updated {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.legal-page h2 {
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.legal-page h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-page p {
+  font-size: 16px;
+  color: var(--text);
+}
