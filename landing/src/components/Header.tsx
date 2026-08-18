@@ -24,7 +24,7 @@ export default function Header() {
     >
       <Container className="flex items-center justify-between">
         <a
-          href="#top"
+          href="/"
           className="font-serif text-base sm:text-lg font-semibold tracking-tight text-ink"
         >
           Даша Радченко

@@ -29,7 +29,11 @@ export default function SectionHeading({
       </Reveal>
       {subtitle && (
         <Reveal delay={0.1}>
-          <p className="mt-5 text-lg sm:text-xl text-ink/70 font-normal leading-relaxed max-w-2xl">
+          <p
+            className={`mt-5 max-w-2xl text-lg font-normal leading-relaxed text-ink/70 sm:text-xl ${
+              align === "center" ? "mx-auto" : ""
+            }`}
+          >
             {subtitle}
           </p>
         </Reveal>

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Container from "./ui/Container";
 import Eyebrow from "./ui/Eyebrow";
-import CTAButton from "./ui/CTAButton";
 
 export default function Hero() {
   return (
@@ -36,10 +35,6 @@ export default function Hero() {
             <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-plum/20 bg-lavender/60 px-4 py-2.5 text-sm font-medium text-plum">
               <span aria-hidden="true">✦</span>
               Не нужно становиться маркетологом
-            </div>
-
-            <div className="mt-10">
-              <CTAButton>Забрать 5 инструментов — 1 900 ₽</CTAButton>
             </div>
           </motion.div>
 

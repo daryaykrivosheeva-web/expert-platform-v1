@@ -1,7 +1,6 @@
 import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Reveal from "./ui/Reveal";
-import CTAButton from "./ui/CTAButton";
 import { systemJourney } from "../data/journey";
 
 export default function ClientJourney() {
@@ -46,10 +45,6 @@ export default function ClientJourney() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal className="mt-16 flex justify-center sm:mt-20">
-          <CTAButton>Забрать 5 инструментов — 1 900 ₽</CTAButton>
-        </Reveal>
       </Container>
     </section>
   );
