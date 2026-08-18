@@ -12,6 +12,10 @@ export interface Tool {
   layout: ToolLayout;
   paragraphs: string[];
   examples?: ToolExample[];
+  /** Optional custom visual card. When `imageHasLabel` is true, the image
+   * already has the number/icon/title baked in, so no HTML overlay is drawn. */
+  image?: string;
+  imageHasLabel?: boolean;
 }
 
 export const tools: Tool[] = [
@@ -20,6 +24,8 @@ export const tools: Tool[] = [
     icon: "🔗",
     title: "Цифровая визитка",
     layout: "horizontal",
+    image: "/images/five-tools-01-visitka.jpg",
+    imageHasLabel: true,
     paragraphs: [
       "Вам нужно место, куда можно отправить человека одной ссылкой.",
       "Не десять сообщений в духе: «Вот мой Telegram, там закреплён пост, а ещё вот фотографии работ, а цены я сейчас пришлю…»",
@@ -32,6 +38,8 @@ export const tools: Tool[] = [
     icon: "🎯",
     title: "Способ получить заявку без бесконечной переписки",
     layout: "reverse",
+    image: "/images/five-tools-02-request.jpg",
+    imageHasLabel: true,
     paragraphs: [
       "Не каждый потенциальный клиент готов написать: «Здравствуйте, сколько стоит?» Особенно если он вас ещё не знает.",
       "Поэтому полезно дать человеку альтернативный способ оставить заявку или рассказать о своей ситуации. Например, через форму или квиз.",
@@ -56,6 +64,8 @@ export const tools: Tool[] = [
     icon: "📍",
     title: "Хотя бы одна площадка, где вас можно найти",
     layout: "split",
+    image: "/images/five-tools-04-platform.jpg",
+    imageHasLabel: false,
     paragraphs: [
       "Здесь я хочу снять ещё одно давление. Вам не нужно быть одновременно в Telegram, VK, YouTube, Instagram, Pinterest, Дзен и ещё пяти местах. Не нужно каждый день создавать контент для семи площадок.",
       "Начните хотя бы с одной. Но она должна отвечать на вопросы: кто вы? Чем занимаетесь? Для кого? Как с вами работать?",

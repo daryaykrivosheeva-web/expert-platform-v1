@@ -9,11 +9,33 @@ const panelStyles: Record<string, string> = {
 };
 
 function NumberPanel({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
+  const aspect = compact ? "aspect-[4/3]" : "aspect-[4/5] sm:aspect-square lg:aspect-[4/5]";
+
+  if (tool.image) {
+    return (
+      <div className={`relative overflow-hidden rounded-[2rem] ${aspect}`}>
+        <img
+          src={tool.image}
+          alt={tool.title}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {!tool.imageHasLabel && (
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent px-7 pb-6 pt-16 sm:px-9 sm:pb-7">
+            <span className="font-serif text-sm font-medium tracking-[0.3em] text-white/70">
+              {tool.number} / 05
+            </span>
+            <h3 className="mt-2 font-serif text-xl leading-tight text-white sm:text-2xl">
+              {tool.title}
+            </h3>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   const styles = panelStyles[tool.number] ?? "bg-plum text-white";
   return (
-    <div
-      className={`flex ${compact ? "aspect-auto py-10" : "aspect-[4/5] sm:aspect-square lg:aspect-[4/5]"} flex-col justify-between rounded-[2rem] ${styles} p-8 sm:p-10`}
-    >
+    <div className={`flex ${aspect} flex-col justify-between rounded-[2rem] ${styles} p-8 sm:p-10`}>
       <span className="font-serif text-sm font-medium tracking-[0.3em] opacity-70">
         {tool.number} / 05
       </span>
