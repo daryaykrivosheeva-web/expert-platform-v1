@@ -12,11 +12,11 @@ function ProductScreenshot({ screenshot, title }: { screenshot: string; title: s
         <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
       </div>
-      <div className="aspect-[4/3] overflow-hidden bg-sand/20">
+      <div className="flex aspect-[4/3] items-center justify-center bg-sand/20 p-4 sm:p-5">
         <img
           src={screenshot}
           alt={title}
-          className="h-full w-full object-cover object-top"
+          className="max-h-full max-w-full rounded-md object-contain shadow-[0_8px_24px_-12px_rgba(37,33,39,0.3)]"
         />
       </div>
     </div>

@@ -13,14 +13,16 @@ function NumberPanel({ tool, compact = false }: { tool: Tool; compact?: boolean 
 
   if (tool.image) {
     return (
-      <div className={`relative overflow-hidden rounded-[2rem] ${aspect}`}>
-        <img
-          src={tool.image}
-          alt={tool.title}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <div className="overflow-hidden rounded-[2rem] border border-ink/10 bg-sand/25">
+        <div className={`flex items-center justify-center ${aspect} p-6 sm:p-8`}>
+          <img
+            src={tool.image}
+            alt={tool.title}
+            className="max-h-full max-w-full rounded-xl object-contain shadow-[0_20px_45px_-20px_rgba(37,33,39,0.35)]"
+          />
+        </div>
         {!tool.imageHasLabel && (
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent px-7 pb-6 pt-16 sm:px-9 sm:pb-7">
+          <div className="bg-plum px-7 py-6 sm:px-9">
             <span className="font-serif text-sm font-medium tracking-[0.3em] text-white/70">
               {tool.number} / 05
             </span>
