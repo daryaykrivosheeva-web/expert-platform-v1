@@ -10,9 +10,9 @@ export const IMAGES = {
   hero: {
     src: "/images/hero-portrait.webp",
     srcMobile: "/images/hero-portrait-800.webp",
-    width: 1020,
-    height: 925,
-    alt: "Игорь Радченко, портрет",
+    width: 853,
+    height: 1280,
+    alt: "Игорь Радченко выступает с трибуны",
   },
   about: {
     src: "/images/about-portrait.webp",
@@ -24,9 +24,9 @@ export const IMAGES = {
   timeline: {
     src: "/images/timeline-podium.webp",
     srcMobile: "/images/timeline-podium-800.webp",
-    width: 853,
-    height: 1280,
-    alt: "Игорь Радченко выступает с трибуны",
+    width: 1020,
+    height: 925,
+    alt: "Игорь Радченко, портрет",
   },
   results: {
     src: "/images/results-conference.webp",
