@@ -1,11 +1,33 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 
 export function useCountUp(target: number, duration = 1400) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
   const reduceMotion = useReducedMotion();
   const [value, setValue] = useState(reduceMotion ? target : 0);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (reduceMotion || inView) return;
+    const el = ref.current;
+    if (!el) return;
+
+    const check = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < vh - 80 && rect.bottom > 80) {
+        setInView(true);
+      }
+    };
+
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+  }, [reduceMotion, inView]);
 
   useEffect(() => {
     if (!inView || reduceMotion) return;

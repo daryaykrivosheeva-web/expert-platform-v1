@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Results from "./components/Results";
+import FlagshipProgram from "./components/FlagshipProgram";
 import Cases from "./components/Cases";
 import GovService from "./components/GovService";
 import AI from "./components/AI";
@@ -28,6 +29,7 @@ export default function App() {
         <About />
         <Timeline />
         <Results />
+        <FlagshipProgram />
         <Cases />
         <GovService />
         <AI />

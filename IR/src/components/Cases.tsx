@@ -51,12 +51,12 @@ function CaseCard({ item, index }: { item: CaseStudy; index: number }) {
 
 export default function Cases() {
   return (
-    <section id="cases" className="bg-paper-alt py-24 sm:py-32">
+    <section id="cases" className="bg-paper py-24 sm:py-32">
       <Container>
         <SectionHeading
           eyebrow="Проекты"
-          title="Восемь решений с проблемой, действием и измеримым результатом"
-          subtitle="Каждый кейс — реальная ситуация из практики: что было, что сделано и что изменилось."
+          title="Семь решений с проблемой, действием и измеримым результатом"
+          subtitle="Каждый кейс — реальная ситуация из практики: что было, что сделано и что изменилось. Флагманская программа Уполномоченного — в отдельном разделе выше."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
