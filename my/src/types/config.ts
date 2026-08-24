@@ -5,25 +5,24 @@
  */
 
 /**
- * Osmo-style token set: a near-monochrome concrete canvas, sharp-radius
- * content tiles, and exactly three chromatic accents used the way the
- * design system prescribes — Volt for CTAs/badges, Ultraviolet for the one
- * featured surface per section, Vermillion for handwritten annotations only
- * (never a fill or background).
+ * Awesomic-style token set: a restrained zinc-gray neutral ramp carrying
+ * nearly the entire interface, with Ember reserved exclusively for a single
+ * sparse credibility accent (never body text, links, or large fills).
+ * Elevation comes from hairline borders (Cloud), not shadows.
  */
 export interface BrandColors {
-  concrete: string;
-  ashGray: string;
-  bone: string;
-  smoke: string;
-  graphite: string;
-  steel: string;
-  charcoal: string;
-  ink: string;
   obsidian: string;
-  volt: string;
-  ultraviolet: string;
-  vermillion: string;
+  graphite: string;
+  slate: string;
+  iron: string;
+  steel: string;
+  fog: string;
+  ash: string;
+  mist: string;
+  cloud: string;
+  paper: string;
+  snow: string;
+  ember: string;
 }
 
 export interface ExpertConfig {

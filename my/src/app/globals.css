@@ -7,13 +7,13 @@ html {
 }
 
 body {
-  background-color: var(--color-concrete);
-  color: var(--color-ink);
+  background-color: var(--color-paper);
+  color: var(--color-graphite);
 }
 
 ::selection {
-  background-color: var(--color-volt);
-  color: var(--color-ink);
+  background-color: var(--color-cloud);
+  color: var(--color-obsidian);
 }
 
 @media (prefers-reduced-motion: reduce) {

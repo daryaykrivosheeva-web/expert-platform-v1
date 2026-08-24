@@ -32,14 +32,14 @@ export function WhyTrust() {
             const Icon = getIcon(item.icon);
             return (
               <Reveal key={item.title} delay={i * 0.05}>
-                <div className="group h-full rounded-3xl border border-charcoal bg-ash-gray p-8 transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lift">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-obsidian text-volt transition-colors duration-300 group-hover:bg-volt group-hover:text-ink">
-                    <Icon className="h-6 w-6" />
+                <div className="h-full rounded-card border border-cloud bg-snow p-7 transition-colors duration-300 hover:border-ash">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-icon bg-paper text-graphite">
+                    <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 font-heading text-lg font-semibold text-ink">
+                  <h3 className="mt-6 font-heading text-subheading font-semibold text-obsidian">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-steel">
+                  <p className="mt-2 text-body text-steel">
                     {item.description}
                   </p>
                 </div>

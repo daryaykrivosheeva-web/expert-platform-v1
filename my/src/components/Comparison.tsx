@@ -1,4 +1,4 @@
-import { Check, Minus } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import siteConfig from "@/config/site.config";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,56 +9,52 @@ export function Comparison() {
   if (!comparison) return null;
 
   return (
-    <section id="comparison" className="bg-ash-gray py-20 sm:py-28">
+    <section id="comparison" className="py-20 sm:py-28">
       <Container>
         <SectionHeading heading={comparison.heading} subheading={comparison.subheading} />
 
-        <Reveal className="mt-14">
-          <div className="overflow-x-auto rounded-3xl border border-charcoal bg-concrete">
-            <table className="w-full min-w-[560px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-charcoal">
-                  <th className="w-1/3 px-6 py-5 text-left font-heading text-sm font-semibold text-steel sm:px-8">
-                    &nbsp;
-                  </th>
-                  <th className="px-4 py-5 text-left font-heading text-base font-semibold text-ink">
-                    {comparison.ownSiteLabel}
-                  </th>
-                  <th className="px-4 py-5 text-left font-heading text-base font-semibold text-steel sm:pr-8">
-                    {comparison.builderLabel}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.rows.map((row, i) => (
-                  <tr
-                    key={row.label}
-                    className={i < comparison.rows.length - 1 ? "border-b border-charcoal" : ""}
-                  >
-                    <td className="px-6 py-5 text-sm font-medium text-steel sm:px-8">
-                      {row.label}
-                    </td>
-                    <td className="px-4 py-5 text-sm text-ink">
-                      <span className="flex items-start gap-2">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
-                        {row.ownSite}
-                      </span>
-                    </td>
-                    <td className="px-4 py-5 text-sm text-steel sm:pr-8">
-                      <span className="flex items-start gap-2">
-                        <Minus className="mt-0.5 h-4 w-4 shrink-0 text-steel" />
-                        {row.builder}
-                      </span>
-                    </td>
-                  </tr>
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <Reveal>
+            <div className="h-full rounded-card border border-cloud bg-snow p-7 sm:p-8">
+              <h3 className="font-heading text-subheading font-semibold text-obsidian">
+                {comparison.ownSiteLabel}
+              </h3>
+              <ul className="mt-6 space-y-5">
+                {comparison.rows.map((row) => (
+                  <li key={row.label} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-obsidian" />
+                    <span>
+                      <span className="block text-caption uppercase text-fog">{row.label}</span>
+                      <span className="text-body text-graphite">{row.ownSite}</span>
+                    </span>
+                  </li>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </Reveal>
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="h-full rounded-card bg-graphite p-7 text-snow sm:p-8">
+              <h3 className="font-heading text-subheading font-semibold text-snow">
+                {comparison.builderLabel}
+              </h3>
+              <ul className="mt-6 space-y-5">
+                {comparison.rows.map((row) => (
+                  <li key={row.label} className="flex items-start gap-3">
+                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-ash" />
+                    <span>
+                      <span className="block text-caption uppercase text-fog">{row.label}</span>
+                      <span className="text-body text-mist">{row.builder}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
 
         {comparison.footnote && (
-          <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-steel">
+          <p className="mx-auto mt-8 max-w-2xl text-center text-body text-steel">
             {comparison.footnote}
           </p>
         )}

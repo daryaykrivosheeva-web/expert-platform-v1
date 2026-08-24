@@ -17,13 +17,13 @@ export function Testimonials() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.items.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.05}>
-              <div className="flex h-full flex-col rounded-3xl border border-charcoal bg-concrete p-8 shadow-card">
-                <div className="flex gap-1 text-volt">
+              <div className="flex h-full flex-col rounded-card border border-cloud bg-snow p-7">
+                <div className="flex gap-1 text-obsidian">
                   {Array.from({ length: item.rating }).map((_, idx) => (
                     <Star key={idx} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <p className="mt-5 flex-1 text-sm leading-relaxed text-ink">
+                <p className="mt-5 flex-1 text-body text-graphite">
                   &ldquo;{item.text}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-3">
@@ -34,8 +34,8 @@ export function Testimonials() {
                     imgClassName="rounded-full"
                   />
                   <div>
-                    <p className="text-sm font-semibold text-ink">{item.name}</p>
-                    <p className="text-xs text-steel">{item.role}</p>
+                    <p className="text-body font-semibold text-obsidian">{item.name}</p>
+                    <p className="text-caption text-fog">{item.role}</p>
                   </div>
                 </div>
               </div>

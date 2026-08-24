@@ -24,16 +24,16 @@ export function BookingConsent({
 
   return (
     <div className="mt-8 flex flex-col items-center gap-5">
-      <label className="flex max-w-xl items-start gap-3 text-left text-sm text-steel">
+      <label className="flex max-w-xl items-start gap-3 text-left text-body text-steel">
         <input
           type="checkbox"
           checked={checked}
           onChange={(e) => setChecked(e.target.checked)}
-          className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-volt)]"
+          className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-obsidian)]"
         />
         <span>
           {consentLabel}{" "}
-          <Link href="/legal/consent" className="underline underline-offset-2 hover:text-ink">
+          <Link href="/legal/consent" className="underline underline-offset-2 hover:text-obsidian">
             Подробнее
           </Link>
         </span>

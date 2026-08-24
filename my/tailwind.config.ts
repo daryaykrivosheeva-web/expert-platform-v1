@@ -10,38 +10,46 @@ const config: Config = {
     },
     extend: {
       colors: {
-        concrete: "var(--color-concrete)",
-        "ash-gray": "var(--color-ash-gray)",
-        bone: "var(--color-bone)",
-        smoke: "var(--color-smoke)",
-        graphite: "var(--color-graphite)",
-        steel: "var(--color-steel)",
-        charcoal: "var(--color-charcoal)",
-        ink: "var(--color-ink)",
         obsidian: "var(--color-obsidian)",
-        volt: "var(--color-volt)",
-        ultraviolet: "var(--color-ultraviolet)",
-        vermillion: "var(--color-vermillion)",
+        graphite: "var(--color-graphite)",
+        slate: "var(--color-slate)",
+        iron: "var(--color-iron)",
+        steel: "var(--color-steel)",
+        fog: "var(--color-fog)",
+        ash: "var(--color-ash)",
+        mist: "var(--color-mist)",
+        cloud: "var(--color-cloud)",
+        paper: "var(--color-paper)",
+        snow: "var(--color-snow)",
+        ember: "var(--color-ember)",
       },
       fontFamily: {
-        heading: ["var(--font-inter)", "sans-serif"],
-        body: ["var(--font-inter)", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
-        hand: ["var(--font-hand)", "cursive"],
+        heading: ["var(--font-manrope)", "sans-serif"],
+        body: ["var(--font-manrope)", "sans-serif"],
+      },
+      fontSize: {
+        caption: ["12px", { lineHeight: "1.64" }],
+        body: ["15px", { lineHeight: "1.45" }],
+        "body-lg": ["18px", { lineHeight: "1.45" }],
+        subheading: ["20px", { lineHeight: "1.5" }],
+        "heading-sm": ["32px", { lineHeight: "1.5" }],
+        heading: ["40px", { lineHeight: "1.28" }],
+        "heading-lg": ["56px", { lineHeight: "1.28" }],
+        display: ["64px", { lineHeight: "1.12" }],
       },
       borderRadius: {
-        // Osmo's two-family radius system: SHARP for content tiles, EXTREME
-        // for anything interactive/circular. Existing `rounded-3xl` (cards)
-        // and `rounded-2xl` (icon frames) usages across components pick
-        // these up automatically — see radius philosophy in DESIGN.md.
-        xl: "2px",
-        "2xl": "160px",
-        "3xl": "5px",
+        // Awesomic's geometry: precise/contained on interactive controls,
+        // generous on containers. Pill (9999px) is reserved for nav CTAs only.
+        card: "36px",
+        icon: "40px",
+        btn: "14px",
+        badge: "12px",
+        pill: "9999px",
       },
       boxShadow: {
-        soft: "0 2px 8px -2px rgba(0, 0, 0, 0.08)",
-        card: "0 1px 0 rgba(0, 0, 0, 0.04)",
-        lift: "4px 4px 0 0 var(--color-ink)",
+        "btn-primary":
+          "inset 0 0.5px 0 0 rgba(255,255,255,0.5), inset 0 9px 14px -5px rgba(117,123,133,0.4), 0 0 0 1.5px #2c2e34, 0 4px 6px 0 rgba(0,0,0,0.14)",
+        menu: "0 4px 12px rgba(0,0,0,0.04)",
       },
       animation: {
         "fade-up": "fadeUp 0.7s ease-out forwards",
