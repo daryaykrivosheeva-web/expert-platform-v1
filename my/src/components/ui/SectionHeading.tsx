@@ -32,15 +32,15 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="mb-3 inline-block rounded-full bg-volt px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink">
+        <span className="mb-3 inline-block rounded-badge border border-cloud px-2 py-1 text-caption font-medium uppercase text-graphite">
           {eyebrow}
         </span>
       )}
-      <h2 className="font-heading text-4xl font-black leading-[0.95] tracking-tight text-ink sm:text-5xl lg:text-6xl lg:tracking-[-0.03em]">
+      <h2 className="font-heading text-heading-sm font-semibold text-obsidian sm:text-heading lg:text-heading-lg">
         {heading}
       </h2>
       {subheading && (
-        <p className="mt-4 text-lg leading-relaxed text-steel">{subheading}</p>
+        <p className="mt-4 text-body-lg text-steel">{subheading}</p>
       )}
     </motion.div>
   );

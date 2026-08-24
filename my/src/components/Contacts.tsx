@@ -23,22 +23,22 @@ export function Contacts() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.05}>
-              <div className="flex h-full flex-col items-center rounded-3xl border border-charcoal bg-ash-gray px-6 py-8 text-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-obsidian text-volt">
+              <div className="flex h-full flex-col items-center rounded-card border border-cloud bg-snow px-6 py-8 text-center">
+                <span className="flex h-12 w-12 items-center justify-center rounded-icon bg-paper text-graphite">
                   <item.icon className="h-5 w-5" />
                 </span>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-steel">
+                <p className="mt-4 text-caption font-medium uppercase text-fog">
                   {item.label}
                 </p>
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="mt-1 text-sm font-medium text-ink underline-offset-4 hover:underline hover:decoration-volt"
+                    className="mt-1 text-body font-medium text-obsidian underline-offset-4 hover:underline"
                   >
                     {item.value}
                   </a>
                 ) : (
-                  <p className="mt-1 text-sm font-medium text-ink">{item.value}</p>
+                  <p className="mt-1 text-body font-medium text-obsidian">{item.value}</p>
                 )}
               </div>
             </Reveal>

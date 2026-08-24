@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: colors.concrete,
+          background: colors.paper,
           fontFamily: "sans-serif",
         }}
       >
@@ -30,9 +30,9 @@ export default function OpengraphImage() {
             justifyContent: "center",
             width: 88,
             height: 88,
-            borderRadius: 6,
+            borderRadius: 20,
             background: colors.obsidian,
-            color: colors.volt,
+            color: colors.snow,
             fontSize: 36,
             fontWeight: 700,
           }}
@@ -41,10 +41,10 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 56, fontWeight: 700, color: colors.ink, lineHeight: 1.15 }}>
+          <div style={{ fontSize: 56, fontWeight: 600, color: colors.obsidian, lineHeight: 1.15 }}>
             {expert.name}
           </div>
-          <div style={{ fontSize: 30, color: colors.charcoal, marginTop: 12, fontWeight: 600 }}>
+          <div style={{ fontSize: 30, color: colors.iron, marginTop: 12, fontWeight: 500 }}>
             {expert.role}
           </div>
           <div style={{ fontSize: 24, color: colors.steel, marginTop: 20, maxWidth: 900 }}>

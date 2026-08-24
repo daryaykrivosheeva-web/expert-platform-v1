@@ -20,10 +20,10 @@ function PortfolioCard({
     <Reveal delay={delay}>
       <div
         tabIndex={0}
-        className="group flex h-full flex-col rounded-3xl border border-charcoal bg-ash-gray p-8 outline-none transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lift focus-visible:-translate-y-1 focus-visible:border-ink focus-visible:shadow-lift"
+        className="group flex h-full flex-col overflow-hidden rounded-card border border-cloud bg-snow outline-none transition-colors duration-300 hover:border-ash focus-visible:border-ash"
       >
-        {item.image && (
-          <div className="relative -mx-8 -mt-8 mb-6 aspect-[16/10] overflow-hidden">
+        {item.image ? (
+          <div className="relative aspect-[16/10] w-full overflow-hidden">
             <Image
               src={item.image}
               alt={item.title}
@@ -32,33 +32,38 @@ function PortfolioCard({
               sizes="(max-width: 640px) 100vw, 50vw"
             />
           </div>
+        ) : (
+          <div className="flex aspect-[16/10] w-full items-center justify-center bg-paper">
+            <span className="flex h-14 w-14 items-center justify-center rounded-icon bg-snow text-graphite">
+              <Icon className="h-6 w-6" />
+            </span>
+          </div>
         )}
-        <div className="flex items-start justify-between gap-4">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-obsidian text-volt">
-            <Icon className="h-6 w-6" />
+
+        <div className="flex flex-1 flex-col p-7">
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="font-heading text-subheading font-semibold text-obsidian">{item.title}</h3>
+            <span className="shrink-0 rounded-badge border border-cloud px-2 py-1 text-caption font-medium text-graphite">
+              {item.category}
+            </span>
+          </div>
+          <p className="mt-2 text-body text-steel">{item.problem}</p>
+
+          <span className="mt-6 text-caption uppercase text-fog">
+            Наведите для подробностей
           </span>
-          <span className="rounded-full border border-charcoal bg-concrete px-3 py-1 text-xs font-semibold uppercase tracking-wider text-steel">
-            {item.category}
-          </span>
-        </div>
 
-        <h3 className="mt-6 font-heading text-lg font-semibold text-ink">{item.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-steel">{item.problem}</p>
-
-        <span className="mt-6 font-mono text-[11px] uppercase tracking-wider text-steel">
-          Наведите для подробностей
-        </span>
-
-        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:pt-4 group-hover:opacity-100 group-focus-visible:grid-rows-[1fr] group-focus-visible:pt-4 group-focus-visible:opacity-100">
-          <div className="min-h-0 space-y-3 border-t border-charcoal pt-4 text-sm leading-relaxed">
-            <p className="text-ink">
-              <span className="font-semibold">Что сделано: </span>
-              {item.description}
-            </p>
-            <p className="text-steel">
-              <span className="font-semibold text-ink">Результат: </span>
-              {item.result}
-            </p>
+          <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:pt-4 group-hover:opacity-100 group-focus-visible:grid-rows-[1fr] group-focus-visible:pt-4 group-focus-visible:opacity-100">
+            <div className="min-h-0 space-y-3 border-t border-cloud pt-4 text-body">
+              <p className="text-graphite">
+                <span className="font-semibold text-obsidian">Что сделано: </span>
+                {item.description}
+              </p>
+              <p className="text-steel">
+                <span className="font-semibold text-obsidian">Результат: </span>
+                {item.result}
+              </p>
+            </div>
           </div>
         </div>
       </div>

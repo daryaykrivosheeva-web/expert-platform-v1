@@ -9,9 +9,9 @@ import type { MouseEvent, ReactNode } from "react";
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-volt text-ink hover:shadow-lift active:scale-[0.98]",
-  secondary: "bg-obsidian text-concrete hover:shadow-lift active:scale-[0.98]",
-  ghost: "text-ink border border-charcoal hover:bg-ash-gray active:scale-[0.98]",
+  primary: "border border-[#2c2e34] bg-obsidian text-snow shadow-btn-primary active:scale-[0.98]",
+  secondary: "border border-cloud bg-snow text-graphite hover:bg-paper active:scale-[0.98]",
+  ghost: "border border-iron bg-snow text-iron hover:bg-cloud/40 active:scale-[0.98]",
 };
 
 const MotionLink = motion.create(Link);
@@ -21,6 +21,7 @@ export function Button({
   href,
   children,
   variant = "primary",
+  pill = false,
   className,
   target,
   onClick,
@@ -28,6 +29,8 @@ export function Button({
   href: string;
   children: ReactNode;
   variant?: ButtonVariant;
+  /** Full-pill radius, reserved for navigation CTAs per the reference's geometry rule. */
+  pill?: boolean;
   className?: string;
   target?: string;
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
@@ -63,7 +66,8 @@ export function Button({
       onMouseLeave={handleMouseLeave}
       style={magnetic ? { x: springX, y: springY } : undefined}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-200",
+        "inline-flex items-center justify-center gap-2 px-4 py-3 text-body font-normal transition-all duration-200",
+        pill ? "rounded-pill" : "rounded-btn",
         variantStyles[variant],
         className
       )}

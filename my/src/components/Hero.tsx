@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   motion,
   useMotionValue,
@@ -94,13 +94,9 @@ function HeroPhoto({ src, name }: { src?: string; name: string }) {
     >
       <motion.div
         style={tiltEnabled ? { rotateX, rotateY, transformStyle: "preserve-3d" } : undefined}
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-charcoal shadow-lift"
+        className="relative aspect-[4/5] w-full overflow-hidden rounded-card border border-cloud"
       >
-        <Avatar src={src} name={name} className="h-full w-full rounded-3xl" />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-ink/10"
-        />
+        <Avatar src={src} name={name} className="h-full w-full" />
       </motion.div>
     </motion.div>
   );
@@ -114,7 +110,7 @@ export function Hero() {
   const initialState = reduceMotion ? "show" : "hidden";
 
   return (
-    <section id="hero" className="relative overflow-hidden pb-20 pt-40 sm:pb-28 sm:pt-48">
+    <section id="hero" className="relative overflow-hidden pb-20 pt-16 sm:pb-28 sm:pt-24">
       <Container>
         <motion.div
           variants={containerVariants}
@@ -125,25 +121,21 @@ export function Hero() {
           <div>
             <motion.span
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full bg-volt px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink"
+              className="inline-flex items-center gap-2 rounded-badge border border-cloud px-2 py-1 text-caption font-medium uppercase text-graphite"
             >
-              <Sparkles className="h-3.5 w-3.5" />
               {hero.eyebrow}
             </motion.span>
 
-            <h1 className="mt-6 font-heading text-4xl font-black leading-[0.95] tracking-tight text-ink sm:text-5xl lg:text-6xl lg:tracking-[-0.03em]">
+            <h1 className="mt-6 font-heading text-heading-lg font-semibold text-obsidian sm:text-display">
               <motion.span variants={itemVariants} className="block">
                 <RevealHeadline text={hero.headline} reduceMotion={!!reduceMotion} />
               </motion.span>
-              <motion.span
-                variants={itemVariants}
-                className="block underline decoration-volt decoration-[6px] underline-offset-8"
-              >
+              <motion.span variants={itemVariants} className="block font-bold">
                 <RevealHeadline text={hero.highlight} reduceMotion={!!reduceMotion} />
               </motion.span>
             </h1>
 
-            <motion.p variants={itemVariants} className="mt-6 max-w-xl text-lg leading-relaxed text-steel">
+            <motion.p variants={itemVariants} className="mt-6 max-w-xl text-body-lg text-steel">
               {hero.subheadline}
             </motion.p>
 
@@ -160,15 +152,15 @@ export function Hero() {
             {hero.stats.length > 0 && (
               <motion.dl
                 variants={itemVariants}
-                className="mt-14 grid grid-cols-3 gap-6 border-t border-charcoal pt-8"
+                className="mt-14 grid grid-cols-3 gap-6 border-t border-cloud pt-8"
               >
                 {hero.stats.map((stat) => (
                   <div key={stat.label}>
                     <dt className="sr-only">{stat.label}</dt>
-                    <dd className="font-heading text-2xl font-bold text-ink sm:text-3xl">
+                    <dd className="font-heading text-heading-sm font-semibold text-obsidian">
                       {stat.value}
                     </dd>
-                    <p className="mt-1 text-sm text-steel">{stat.label}</p>
+                    <p className="mt-1 text-body text-steel">{stat.label}</p>
                   </div>
                 ))}
               </motion.dl>

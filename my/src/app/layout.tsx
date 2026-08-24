@@ -41,18 +41,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const { colors } = siteConfig.brand;
 
   const cssVars = {
-    "--color-concrete": colors.concrete,
-    "--color-ash-gray": colors.ashGray,
-    "--color-bone": colors.bone,
-    "--color-smoke": colors.smoke,
-    "--color-graphite": colors.graphite,
-    "--color-steel": colors.steel,
-    "--color-charcoal": colors.charcoal,
-    "--color-ink": colors.ink,
     "--color-obsidian": colors.obsidian,
-    "--color-volt": colors.volt,
-    "--color-ultraviolet": colors.ultraviolet,
-    "--color-vermillion": colors.vermillion,
+    "--color-graphite": colors.graphite,
+    "--color-slate": colors.slate,
+    "--color-iron": colors.iron,
+    "--color-steel": colors.steel,
+    "--color-fog": colors.fog,
+    "--color-ash": colors.ash,
+    "--color-mist": colors.mist,
+    "--color-cloud": colors.cloud,
+    "--color-paper": colors.paper,
+    "--color-snow": colors.snow,
+    "--color-ember": colors.ember,
   } as React.CSSProperties;
 
   return (
