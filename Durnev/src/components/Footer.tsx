@@ -37,7 +37,7 @@ export default function Footer() {
         <p className="text-xs text-on-dark-muted/70">
           Разработка сайта —{" "}
           <a href="https://www.studiodarya.ru/" target="_blank" rel="noreferrer" className="transition-colors hover:text-gold-soft">
-            Студия Дарья
+            Студия Даря
           </a>
         </p>
       </Container>
