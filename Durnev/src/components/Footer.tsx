@@ -30,9 +30,15 @@ export default function Footer() {
         </div>
       </Container>
 
-      <Container className="mt-8">
+      <Container className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-on-dark-muted/70">
           © {year} {SITE.fullName}. Все права защищены.
+        </p>
+        <p className="text-xs text-on-dark-muted/70">
+          Разработка сайта —{" "}
+          <a href="https://www.studiodarya.ru/" target="_blank" rel="noreferrer" className="transition-colors hover:text-gold-soft">
+            Студия Дарья
+          </a>
         </p>
       </Container>
     </footer>
