@@ -21,7 +21,6 @@ export default function Hero() {
 
           <motion.h1 variants={item} className="mt-6 text-balance text-[clamp(2.4rem,6vw+1rem,5rem)] font-semibold uppercase leading-[1.02] text-ink">
             {SITE.name}
-            <span className="block text-gold">«{SITE.callsign}»</span>
           </motion.h1>
 
           <motion.p variants={item} className="mt-5 text-sm font-medium uppercase tracking-[0.15em] text-stone-muted sm:text-base">
