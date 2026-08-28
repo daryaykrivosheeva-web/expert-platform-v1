@@ -1,5 +1,5 @@
 import Container from "./ui/Container";
-import SectionHeading from "./ui/SectionHeading";
+import Eyebrow from "./ui/Eyebrow";
 import CTAButton from "./ui/CTAButton";
 import Reveal from "./ui/Reveal";
 import { OFFER, SITE } from "../data/profile";
@@ -8,7 +8,9 @@ export default function Offer() {
   return (
     <section id="offer" className="bg-ink py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow={OFFER.eyebrow} title={OFFER.title} tone="dark" />
+        <Reveal>
+          <Eyebrow tone="dark">{OFFER.eyebrow}</Eyebrow>
+        </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
           <blockquote className="border-l-2 border-gold pl-6 sm:pl-8">
@@ -30,9 +32,6 @@ export default function Offer() {
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <CTAButton href={SITE.phoneHref} variant="solid">
                 Позвонить: {SITE.phone}
-              </CTAButton>
-              <CTAButton href={SITE.telegramHref} variant="ghost" target="_blank" rel="noreferrer">
-                Написать в Telegram
               </CTAButton>
             </div>
             <p className="mt-4 text-sm text-on-dark-muted">{SITE.maxNote}</p>
