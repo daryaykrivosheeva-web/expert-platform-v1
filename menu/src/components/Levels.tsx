@@ -1,6 +1,7 @@
 import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Reveal from "./ui/Reveal";
+import CTAButton from "./ui/CTAButton";
 import { levels } from "../data/levels";
 
 export default function Levels() {
@@ -36,6 +37,15 @@ export default function Levels() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2}>
+          <div className="mx-auto mt-10 max-w-md text-center sm:mt-12">
+            <p className="mb-5 text-[15px] leading-relaxed text-ink/60">
+              Не нужно угадывать заранее — все четыре уровня уже включены в покупку.
+            </p>
+            <CTAButton variant="outline">Получить все 4 меню за 990 ₽</CTAButton>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

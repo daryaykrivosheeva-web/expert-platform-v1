@@ -1,11 +1,6 @@
+import { Link } from "react-router-dom";
 import Container from "./ui/Container";
-import {
-  AUTHOR_NAME,
-  OFERTA_URL,
-  PRIVACY_URL,
-  PINTEREST_URL,
-  THREADS_URL,
-} from "../data/constants";
+import { SELLER_CITY, SELLER_INN, SELLER_NAME, SELLER_STATUS } from "../data/constants";
 
 export default function Footer() {
   return (
@@ -13,38 +8,19 @@ export default function Footer() {
       <Container className="flex flex-col gap-8 text-center sm:text-left">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <span className="font-serif text-base text-ink">{AUTHOR_NAME}</span>
+            <span className="font-serif text-base text-ink">{SELLER_NAME}</span>
+            <p className="mt-2 text-sm leading-relaxed text-ink/55">
+              {SELLER_STATUS}, {SELLER_CITY}. ИНН {SELLER_INN}
+            </p>
           </div>
 
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:justify-end">
-            <a
-              href={PINTEREST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-ink/55 transition-colors hover:text-sage"
-            >
-              Pinterest
-            </a>
-            <a
-              href={THREADS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-ink/55 transition-colors hover:text-sage"
-            >
-              Threads
-            </a>
-            <a
-              href={OFERTA_URL}
-              className="text-sm text-ink/55 transition-colors hover:text-sage"
-            >
+            <Link to="/oferta" className="text-sm text-ink/55 transition-colors hover:text-sage">
               Оферта
-            </a>
-            <a
-              href={PRIVACY_URL}
-              className="text-sm text-ink/55 transition-colors hover:text-sage"
-            >
+            </Link>
+            <Link to="/privacy" className="text-sm text-ink/55 transition-colors hover:text-sage">
               Политика конфиденциальности
-            </a>
+            </Link>
           </nav>
         </div>
 

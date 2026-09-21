@@ -1,17 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import ScrollProgress from "./components/ScrollProgress";
 import Footer from "./components/Footer";
 import MobileStickyCTA from "./components/MobileStickyCTA";
 import Landing from "./pages/Landing";
+import Offer from "./pages/Offer";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <ScrollProgress />
       <Header />
-      <Landing />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/oferta" element={<Offer />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+      </Routes>
       <Footer />
       <MobileStickyCTA />
-    </>
+    </BrowserRouter>
   );
 }

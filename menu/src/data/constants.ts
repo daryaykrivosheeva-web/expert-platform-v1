@@ -9,14 +9,15 @@ export const CTA_LABEL_SHORT = "Купить меню";
 
 export const PRODUCT_NAME = 'Неделя без вопроса «Что приготовить?»';
 
-// TODO: заполните перед публикацией — имя автора или название проекта.
-export const AUTHOR_NAME = "[Имя автора / название проекта]";
+// Реквизиты продавца — используются в футере, оферте и политике конфиденциальности.
+export const SELLER_NAME = "Радченко Дарья Олеговна";
+export const SELLER_STATUS = "Самозанятая (плательщик налога на профессиональный доход)";
+export const SELLER_CITY = "г. Благовещенск, Амурская область";
+export const SELLER_INN = "282514212660";
 
-// TODO: вставьте реальные ссылки на соцсети и юридические документы.
-export const PINTEREST_URL = "#";
-export const THREADS_URL = "#";
-export const OFERTA_URL = "#";
-export const PRIVACY_URL = "#";
+// Контакт для вопросов по оплате, доступу и возврату средств.
+export const TELEGRAM_HANDLE = "@dashatulula";
+export const TELEGRAM_URL = "https://t.me/dashatulula";
 
 export const navLinks = [
   { href: "#inside", label: "Что внутри" },
