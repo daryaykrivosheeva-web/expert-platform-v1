@@ -1,16 +1,16 @@
 export const insideGallery = [
   {
-    src: "/images/preview-menu-day.svg",
+    src: "/images/preview-menu-day.png",
     alt: "Заглушка страницы меню на день с КБЖУ — замените на реальный скриншот PDF",
     caption: "День меню + КБЖУ",
   },
   {
-    src: "/images/preview-shopping-list.svg",
+    src: "/images/preview-shopping-list.png",
     alt: "Заглушка страницы списка покупок на неделю — замените на реальный скриншот PDF",
     caption: "Список покупок",
   },
   {
-    src: "/images/preview-sunday-prep.svg",
+    src: "/images/preview-sunday-prep.png",
     alt: "Заглушка страницы плана воскресной заготовки — замените на реальный скриншот PDF",
     caption: "Воскресная заготовка",
   },

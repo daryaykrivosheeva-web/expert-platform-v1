@@ -21,13 +21,6 @@ src/
                         WhatsInside, Levels, Bonus, Comparison, Audience,
                         Pricing, FAQ, FinalCTA, Header, Footer,
                         ScrollProgress, MobileStickyCTA)
-  components/Testimonials.tsx
-                      — блок отзывов. НЕ подключён на странице (см.
-                        src/pages/Landing.tsx) — компонент возвращает null,
-                        пока src/data/testimonials.ts пуст. Когда появятся
-                        настоящие отзывы: заполните массив в
-                        src/data/testimonials.ts и раскомментируйте
-                        <Testimonials /> в src/pages/Landing.tsx.
   components/ui/     — переиспользуемые примитивы (Container, CTAButton,
                         SectionHeading, Eyebrow, Reveal)
   data/              — весь контент и константы (цена, ссылка на оплату,
@@ -63,12 +56,32 @@ UTM-метки прямо в `TRIBUTE_URL`, например:
 - `index.html` — `<link rel="canonical">`, `og:site_name`, Яндекс.Метрика
   (counter ID), `og:image` как абсолютный URL после публикации.
 - `public/robots.txt` — ссылка на sitemap (или удалите строку).
-- Картинки — все изображения в `public/images/*.svg` и сгенерированный из
-  og-image.svg `public/images/og-image.png` сейчас нейтральные заглушки
-  (мокапы телефона/планшета, превью страниц PDF). Замените на реальные
-  скриншоты меню — компоненты уже подключены и ждут `<img>` с теми же
-  путями (или обновите пути в `src/data/inside.ts`, `Hero.tsx`, `Bonus.tsx`).
-- Блок отзывов (`Testimonials.tsx`) — скрыт, см. раздел «Структура» выше.
+- Картинки — см. раздел «Скриншоты» ниже.
+
+## Скриншоты
+
+Все изображения сейчас — нейтральные PNG-заглушки (мокапы телефона/
+планшета, превью страниц PDF), без реального контента. Чтобы заменить их:
+
+1. Положите файлы в `public/images/`.
+2. Назовите их **точно так же**, как заглушки ниже, — тогда в коде ничего
+   менять не нужно, файлы просто перезапишутся:
+
+   | Файл | Где используется | Рекомендуемый размер |
+   |---|---|---|
+   | `mockup-phone.png` | Hero, экран телефона | 360×720 (соотношение ~1:2) |
+   | `mockup-tablet.png` | Hero, экран планшета | 480×640 (соотношение 3:4) |
+   | `preview-menu-day.png` | «Что внутри», галерея | 400×520 (соотношение ~10:13) |
+   | `preview-shopping-list.png` | «Что внутри», галерея | 400×520 |
+   | `preview-sunday-prep.png` | «Что внутри», галерея | 400×520 |
+   | `preview-bonus.png` | Блок «Бонус» | 400×520 |
+   | `og-image.png` | og:image / превью в соцсетях и мессенджерах | 1200×630 (жёстко, не менять) |
+
+3. Формат — PNG (или JPG, тогда поменяйте расширение в трёх местах:
+   `src/components/Hero.tsx`, `src/components/Bonus.tsx`,
+   `src/data/inside.ts`). Точный размер не обязателен — важны примерные
+   пропорции, картинка растянется по контейнеру.
+4. После замены проверьте `npm run build` и `npm run preview`.
 
 ## Локальный запуск
 

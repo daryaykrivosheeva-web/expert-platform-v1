@@ -43,7 +43,7 @@ export default function Hero() {
           className="relative mx-auto flex w-full max-w-sm items-end justify-center gap-4 sm:max-w-md"
         >
           <img
-            src="/images/mockup-tablet.svg"
+            src="/images/mockup-tablet.png"
             alt="Заглушка: превью PDF-меню на экране планшета — замените на реальный скриншот"
             className="hidden w-3/5 drop-shadow-xl sm:block"
             width={480}
@@ -51,7 +51,7 @@ export default function Hero() {
             loading="eager"
           />
           <img
-            src="/images/mockup-phone.svg"
+            src="/images/mockup-phone.png"
             alt="Заглушка: превью PDF-меню на экране телефона — замените на реальный скриншот"
             className="w-2/5 drop-shadow-xl sm:w-2/5"
             width={360}

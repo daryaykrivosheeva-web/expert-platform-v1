@@ -9,7 +9,6 @@ import Comparison from "../components/Comparison";
 import Audience from "../components/Audience";
 import Pricing from "../components/Pricing";
 import FAQ from "../components/FAQ";
-// import Testimonials from "../components/Testimonials";
 import FinalCTA from "../components/FinalCTA";
 
 export default function Landing() {
@@ -26,9 +25,6 @@ export default function Landing() {
       <Audience />
       <Pricing />
       <FAQ />
-      {/* Блок отзывов скрыт до появления настоящих отзывов.
-          Заполните src/data/testimonials.ts и раскомментируйте строку ниже. */}
-      {/* <Testimonials /> */}
       <FinalCTA />
     </main>
   );

@@ -34,7 +34,7 @@ export default function Bonus() {
 
               <div className="mx-auto w-full max-w-[220px] sm:max-w-[260px]">
                 <img
-                  src="/images/preview-bonus.svg"
+                  src="/images/preview-bonus.png"
                   alt="Заглушка: страница сборника «Памятки и трекеры» — замените на реальный скриншот"
                   className="w-full rounded-2xl shadow-[0_24px_50px_-20px_rgba(47,79,65,0.4)]"
                   width={400}
