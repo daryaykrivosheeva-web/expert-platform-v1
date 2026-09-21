@@ -40,22 +40,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto flex w-full max-w-sm items-end justify-center gap-4 sm:max-w-md"
+          className="relative mx-auto mb-6 w-full max-w-[300px] sm:mb-12 sm:max-w-md"
         >
           <img
-            src="/images/mockup-tablet.png"
-            alt="Заглушка: превью PDF-меню на экране планшета — замените на реальный скриншот"
-            className="hidden w-3/5 drop-shadow-xl sm:block"
-            width={480}
-            height={640}
+            src="/images/01-oblozhka.png"
+            alt="Обложка PDF «Меню на 4 недели, 1400 ккал»"
+            className="w-full -rotate-2 rounded-xl shadow-[0_30px_60px_-24px_rgba(47,79,65,0.4)]"
+            width={1050}
+            height={1427}
             loading="eager"
           />
           <img
-            src="/images/mockup-phone.png"
-            alt="Заглушка: превью PDF-меню на экране телефона — замените на реальный скриншот"
-            className="w-2/5 drop-shadow-xl sm:w-2/5"
-            width={360}
-            height={720}
+            src="/images/02-obzor-nedeli.png"
+            alt="Страница обзора недели 1 из PDF-меню: таблица завтраков, обедов, перекусов и ужинов"
+            className="absolute -bottom-8 -right-6 hidden w-3/5 rotate-3 rounded-xl shadow-[0_30px_60px_-20px_rgba(47,79,65,0.45)] sm:block"
+            width={1050}
+            height={1427}
             loading="eager"
           />
         </motion.div>

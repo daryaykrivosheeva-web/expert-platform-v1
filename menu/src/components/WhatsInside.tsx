@@ -13,16 +13,16 @@ export default function WhatsInside() {
           <Reveal>
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {insideGallery.map((item) => (
-                <figure key={item.src} className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(47,79,65,0.35)]">
+                <figure key={item.src}>
                   <img
                     src={item.src}
                     alt={item.alt}
-                    className="w-full"
-                    width={400}
-                    height={520}
+                    className="w-full rounded-xl shadow-[0_16px_40px_-20px_rgba(47,79,65,0.4)]"
+                    width={1050}
+                    height={1427}
                     loading="lazy"
                   />
-                  <figcaption className="px-2 py-2 text-center text-[11px] leading-tight text-ink/60 sm:text-xs">
+                  <figcaption className="px-1 py-2 text-center text-[11px] leading-tight text-ink/60 sm:text-xs">
                     {item.caption}
                   </figcaption>
                 </figure>

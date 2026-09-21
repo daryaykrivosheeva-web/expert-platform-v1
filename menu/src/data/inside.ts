@@ -1,17 +1,17 @@
 export const insideGallery = [
   {
-    src: "/images/preview-menu-day.png",
-    alt: "Заглушка страницы меню на день с КБЖУ — замените на реальный скриншот PDF",
+    src: "/images/03-den-menyu.png",
+    alt: "Страница дня меню: завтрак, обед, перекус, ужин с граммовками и КБЖУ",
     caption: "День меню + КБЖУ",
   },
   {
-    src: "/images/preview-shopping-list.png",
-    alt: "Заглушка страницы списка покупок на неделю — замените на реальный скриншот PDF",
+    src: "/images/04-spisok-pokupok.png",
+    alt: "Страница списка покупок на неделю по группам продуктов",
     caption: "Список покупок",
   },
   {
-    src: "/images/preview-sunday-prep.png",
-    alt: "Заглушка страницы плана воскресной заготовки — замените на реальный скриншот PDF",
+    src: "/images/05-voskresnaya-zagotovka.png",
+    alt: "Страница плана воскресной заготовки на неделю",
     caption: "Воскресная заготовка",
   },
 ];

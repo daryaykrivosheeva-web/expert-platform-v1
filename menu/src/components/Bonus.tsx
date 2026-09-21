@@ -32,13 +32,21 @@ export default function Bonus() {
                 </ul>
               </div>
 
-              <div className="mx-auto w-full max-w-[220px] sm:max-w-[260px]">
+              <div className="relative mx-auto w-full max-w-[200px] pb-6 sm:max-w-[240px] sm:pb-10">
                 <img
-                  src="/images/preview-bonus.png"
-                  alt="Заглушка: страница сборника «Памятки и трекеры» — замените на реальный скриншот"
-                  className="w-full rounded-2xl shadow-[0_24px_50px_-20px_rgba(47,79,65,0.4)]"
-                  width={400}
-                  height={520}
+                  src="/images/08-podarok-trekher-vody.png"
+                  alt="Страница трекера воды на 4 недели из сборника «Памятки и трекеры»"
+                  className="absolute -bottom-2 -right-4 hidden w-3/5 rotate-3 rounded-xl shadow-[0_20px_44px_-18px_rgba(47,79,65,0.4)] sm:block"
+                  width={1050}
+                  height={1427}
+                  loading="lazy"
+                />
+                <img
+                  src="/images/07-podarok-oblozhka.png"
+                  alt="Обложка сборника «Спокойная неделя: вода, аппетит и трекеры»"
+                  className="relative w-full -rotate-2 rounded-xl shadow-[0_24px_50px_-20px_rgba(47,79,65,0.4)]"
+                  width={1050}
+                  height={1427}
                   loading="lazy"
                 />
               </div>
