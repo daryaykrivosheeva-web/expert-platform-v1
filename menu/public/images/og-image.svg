@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F7F2E9"/>
+  <rect width="1200" height="630" fill="none" stroke="#2F4F41" stroke-opacity="0.08" stroke-width="4"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#C9694A"/>
+  <text x="80" y="220" font-family="Georgia, 'Playfair Display', serif" font-size="66" fill="#2F4F41" font-weight="600">Неделя без вопроса</text>
+  <text x="80" y="300" font-family="Georgia, 'Playfair Display', serif" font-size="66" fill="#2F4F41" font-weight="600">«Что приготовить?»</text>
+  <text x="80" y="360" font-family="Inter, sans-serif" font-size="30" fill="#4F7A66">Меню на 4 недели · списки покупок · воскресная заготовка</text>
+
+  <rect x="80" y="420" width="260" height="72" rx="36" fill="#C9694A"/>
+  <text x="210" y="465" text-anchor="middle" font-family="Inter, sans-serif" font-size="26" fill="#F7F2E9" font-weight="600">990 ₽</text>
+
+  <g transform="translate(880,120)">
+    <rect x="0" y="0" width="180" height="360" rx="26" fill="#2F4F41"/>
+    <rect x="10" y="14" width="160" height="332" rx="16" fill="#FFFFFF"/>
+    <rect x="10" y="14" width="160" height="40" fill="#4F7A66"/>
+    <rect x="26" y="76" width="128" height="10" rx="3" fill="#2F4F41" opacity="0.7"/>
+    <rect x="26" y="96" width="90" height="8" rx="3" fill="#2F4F41" opacity="0.4"/>
+    <rect x="26" y="120" width="128" height="46" rx="8" fill="#FBE5D6"/>
+    <rect x="26" y="178" width="128" height="46" rx="8" fill="#FBE5D6"/>
+    <rect x="26" y="236" width="128" height="46" rx="8" fill="#FBE5D6"/>
+  </g>
+</svg>

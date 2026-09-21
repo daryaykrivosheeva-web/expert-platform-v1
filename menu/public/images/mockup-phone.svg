@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" role="img" aria-label="Превью PDF-меню на экране телефона (заглушка, замените на реальный скриншот)">
+  <rect width="360" height="720" rx="0" fill="none"/>
+  <rect x="20" y="10" width="240" height="700" rx="42" fill="#2F4F41"/>
+  <rect x="30" y="24" width="220" height="672" rx="30" fill="#F7F2E9"/>
+  <rect x="30" y="24" width="220" height="56" rx="0" fill="#4F7A66"/>
+  <text x="140" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#F7F2E9">Меню · Неделя 1</text>
+  <g fill="#2F4F41" opacity="0.85">
+    <rect x="46" y="100" width="188" height="14" rx="4"/>
+    <rect x="46" y="126" width="140" height="10" rx="3" opacity="0.55"/>
+    <rect x="46" y="160" width="188" height="1" opacity="0.2"/>
+    <rect x="46" y="176" width="80" height="12" rx="3"/>
+    <rect x="150" y="176" width="84" height="12" rx="3" opacity="0.5"/>
+    <rect x="46" y="200" width="188" height="60" rx="8" fill="#FBE5D6" stroke="none"/>
+  </g>
+  <g fill="#2F4F41" opacity="0.75">
+    <rect x="46" y="280" width="80" height="12" rx="3"/>
+    <rect x="150" y="280" width="84" height="12" rx="3" opacity="0.5"/>
+    <rect x="46" y="304" width="188" height="60" rx="8" fill="#FBE5D6"/>
+    <rect x="46" y="384" width="80" height="12" rx="3"/>
+    <rect x="150" y="384" width="84" height="12" rx="3" opacity="0.5"/>
+    <rect x="46" y="408" width="188" height="60" rx="8" fill="#FBE5D6"/>
+  </g>
+  <circle cx="140" cy="668" r="16" fill="none" stroke="#2F4F41" stroke-width="2" opacity="0.4"/>
+</svg>
