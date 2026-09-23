@@ -58,6 +58,18 @@ export default function Hero() {
             height={1427}
             loading="eager"
           />
+
+          <div
+            className="absolute -top-3 -left-3 z-10 -rotate-6 rounded-2xl bg-peach px-3 py-2 shadow-[0_14px_28px_-10px_rgba(201,105,74,0.55)] sm:-top-5 sm:-left-5 sm:px-4 sm:py-2.5"
+            aria-hidden="true"
+          >
+            <p className="text-[9px] font-semibold uppercase tracking-wider text-terracotta-dark sm:text-[10px]">
+              4 уровня калорийности
+            </p>
+            <p className="mt-0.5 text-center text-sm font-bold text-ink sm:text-base">
+              1250 · 1400 · 1600 · 1900
+            </p>
+          </div>
         </motion.div>
       </Container>
     </section>
