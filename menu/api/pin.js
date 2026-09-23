@@ -73,7 +73,16 @@ function card({ label, title, note, points, theme }) {
   ].filter(Boolean));
 }
 
-export async function renderCard(params) {
+// Пример для проверки в браузере: /api/pin?demo=1
+const DEMO = new URLSearchParams({
+  label: "заготовки", title: "Моя воскресная заготовка: 5 шагов", note: "2 часа в воскресенье",
+  p1: "Ставлю крупу|Гречка и рис на 3–4 дня", p2: "Запекаю курицу|Пока варится крупа",
+  p3: "Режу овощи|Для салатов и гарниров", p4: "Варю яйца|Для завтраков и перекусов",
+  p5: "Раскладываю по контейнерам|И подписываю дату",
+});
+
+export async function renderCard(input) {
+  const params = input.get("demo") ? new URLSearchParams([...DEMO, ["theme", input.get("theme") ?? "dasha"]]) : input;
   const points = [1, 2, 3, 4, 5]
     .map((n) => clean(params.get(`p${n}`), 110).split("|"))
     .filter(([head]) => head)
