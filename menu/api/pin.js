@@ -14,6 +14,7 @@ function loadFonts() {
     fontsCache.push({ name: "Playfair" + suffix, data: font(`playfair-display-${subset}-700-normal.woff`), weight: 700 });
     fontsCache.push({ name: "Inter" + suffix, data: font(`inter-${subset}-400-normal.woff`), weight: 400 });
     fontsCache.push({ name: "Inter" + suffix, data: font(`inter-${subset}-600-normal.woff`), weight: 600 });
+    fontsCache.push({ name: "Inter" + suffix, data: font(`inter-${subset}-700-normal.woff`), weight: 700 });
     fontsCache.push({ name: "Caveat" + suffix, data: font(`caveat-${subset}-600-normal.woff`), weight: 600 });
   }
   return fontsCache;
@@ -25,8 +26,9 @@ const HAND = "CaveatL, CaveatC";
 
 const COLORS = { terra: "#C9694A", terraDark: "#A94F34", ink: "#2F4F41", sage: "#4F7A66", white: "#FFFFFF" };
 const THEMES = {
-  dasha: { bg: "#FBE5D6", title: COLORS.terraDark },
-  nastya: { bg: "#F7F2E9", title: COLORS.ink },
+  dasha: { layout: "bubbles", bg: "#FBE5D6", title: COLORS.terraDark },
+  // Аккаунт Насти: другой макет (тёмно-зелёная шапка, номера 01–05, горчичная плашка внизу).
+  nastya: { layout: "band", bg: "#F7F2E9", band: "#2F4F41", accent: "#E3A83B", text: "#2F4F41", muted: "#5E6B63", line: "#DDD5C5" },
 };
 
 function h(type, style, children) {
@@ -43,7 +45,39 @@ function clean(value, max) {
   return (space > max * 0.6 ? cut.slice(0, space) : cut).replace(/[\s,.:;—-]+$/, "");
 }
 
+// Макет Насти: шапка с заголовком, список с крупными номерами, плашка-призыв внизу.
+function bandCard({ label, title, note, points, theme }) {
+  const dense = title.length > 50 || points.some(([head, sub]) => head.length > 28 || sub.length > 42);
+  const titleSize = dense ? 58 : title.length > 30 ? 68 : 78;
+  const [headSize, subSize, pad] = dense ? [31, 25, 18] : [36, 29, 24];
+  return h("div", { width: 1000, height: 1500, background: theme.bg, flexDirection: "column" }, [
+    h("div", { background: theme.band, padding: "70px 80px 60px", flexDirection: "column" }, [
+      label
+        ? h("div", { alignSelf: "flex-start", background: theme.accent, color: theme.band, fontFamily: SANS, fontWeight: 700,
+            fontSize: 26, letterSpacing: 2, textTransform: "uppercase", padding: "10px 24px", borderRadius: 10 }, label)
+        : null,
+      text(title, { marginTop: 30, fontFamily: SANS, fontWeight: 700, fontSize: titleSize, lineHeight: 1.12, color: "#F7F2E9" }),
+    ].filter(Boolean)),
+    h("div", { padding: "30px 80px 0", flexDirection: "column" }, points.map(([head, sub], i) =>
+      h("div", { alignItems: "center", padding: `${pad}px 0`, borderBottom: i < points.length - 1 ? `2px solid ${theme.line}` : "none" }, [
+        text(String(i + 1).padStart(2, "0"), { width: 110, flexShrink: 0, fontFamily: SANS, fontWeight: 700, fontSize: 56, color: theme.accent }),
+        h("div", { flexDirection: "column", width: 730 }, [
+          text(head, { fontFamily: SANS, fontWeight: 700, fontSize: headSize, color: theme.text }),
+          sub ? text(sub, { marginTop: 4, fontFamily: SANS, fontWeight: 400, fontSize: subSize, lineHeight: 1.3, color: theme.muted }) : null,
+        ].filter(Boolean)),
+      ]))),
+    h("div", { marginTop: "auto", padding: "0 80px 70px", flexDirection: "column" }, [
+      note ? text(note, { fontFamily: HAND, fontWeight: 600, fontSize: 50, color: COLORS.terra, marginBottom: 18 }) : null,
+      h("div", { background: theme.accent, borderRadius: 18, padding: "22px 30px", alignItems: "center", justifyContent: "space-between" }, [
+        text("Готовое меню на месяц", { fontFamily: SANS, fontWeight: 700, fontSize: 32, color: theme.band }),
+        text("ссылка в профиле", { fontFamily: SANS, fontWeight: 600, fontSize: 28, color: theme.band }),
+      ]),
+    ].filter(Boolean)),
+  ]);
+}
+
 function card({ label, title, note, points, theme }) {
+  if (theme.layout === "band") return bandCard({ label, title, note, points, theme });
   // Если ChatGPT написал длиннее нормы — уменьшаем шрифты, чтобы всё поместилось.
   const dense = title.length > 50 || points.some(([head, sub]) => head.length > 28 || sub.length > 42);
   const titleSize = dense ? 62 : title.length > 28 ? 76 : 88;
