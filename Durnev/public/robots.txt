@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://durnev-amur.ru/sitemap.xml

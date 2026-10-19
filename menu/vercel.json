@@ -1,6 +1,0 @@
-{
-  "functions": {
-    "api/pin.js": { "includeFiles": "api/_fonts/**", "maxDuration": 30 }
-  },
-  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
-}
