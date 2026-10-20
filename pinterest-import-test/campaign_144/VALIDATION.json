@@ -1,0 +1,45 @@
+{
+  "validated_at_utc": "2026-10-20T00:27:43.890732+00:00",
+  "rows": 144,
+  "days": 72,
+  "pins_per_day": 2,
+  "start_local": "2026-10-21",
+  "end_local": "2026-12-31",
+  "slots_local": [
+    "12:00",
+    "19:00"
+  ],
+  "timezone": "Asia/Yakutsk",
+  "publish_date_timezone": "UTC",
+  "reused": 118,
+  "new": 26,
+  "excluded_already_published": [
+    "new_006",
+    "ref_001"
+  ],
+  "board_counts": {
+    "Заготовки на всю неделю: как я готовлю": 24,
+    "Что легко приготовить на ужин": 24,
+    "Шпаргалки: списки покупок и бюджет": 24,
+    "Моё меню на всю неделю": 24,
+    "Завтраки, обеды с собой и перекусы": 24,
+    "Праздничный стол: Новый год без хлопот": 24
+  },
+  "unique_titles": 144,
+  "unique_media_urls": 144,
+  "unique_image_sha256": 144,
+  "image_size": "1024x1536",
+  "public_head_passed": 144,
+  "public_get_passed": 144,
+  "download_sha256_matches": 144,
+  "weekly_batches_match_main": true,
+  "csv_encoding": "UTF-8 with BOM",
+  "csv_quoting": "all",
+  "csv_line_endings": "LF",
+  "header_matches_working_upload": true,
+  "ocr_checked_new_images": 26,
+  "numeric_ocr_flags_visually_reviewed": true,
+  "full_144_row_account_import_tested": false,
+  "website_checkout_tested": false,
+  "media_commit": "79753046644f09ef717b4b31f70ba6959e5aa331"
+}
