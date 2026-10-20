@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: [ВСТАВЬТЕ ССЫЛКУ НА SITEMAP ИЛИ УДАЛИТЕ ЭТУ СТРОКУ]

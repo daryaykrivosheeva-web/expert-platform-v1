@@ -1,0 +1,489 @@
+import type { SiteConfig } from "@/types/config";
+
+/**
+ * Studio's own site: Дарья Радченко — website development for experts and
+ * small business. This is not a client adaptation — it's the studio's own
+ * business-card/portfolio site, built on the same template and mechanism
+ * as every client niche (see README.md → "New client — what to do").
+ *
+ * Deploy as its own Vercel/Netlify project with `NEXT_PUBLIC_SITE_CONFIG=studio`.
+ *
+ * Palette: deep pine green + warm copper — calm, editorial, premium, and
+ * deliberately not the generic AI-purple gradient. Manrope + Inter, both
+ * with full Cyrillic support.
+ *
+ * PLACEHOLDER DATA still pending — replace before going live:
+ * - `contacts.max` uses a tel: link (no public MAX profile link exists yet —
+ *   swap for the real one once you have it)
+ * - `seo.siteUrl` (placeholder domain — set once the real domain is chosen)
+ * - `legal.entityName` (missing patronymic — add the full legal ФИО before
+ *   publishing, it's required on the auto-generated legal pages)
+ *
+ * Everything else (email, Telegram, phone, city, ИНН, legal status) is
+ * real, as supplied.
+ */
+const studioConfig: SiteConfig = {
+  brand: {
+    logoText: "Дарья Радченко",
+    colors: {
+      primary: "#2F5D50",
+      primaryDark: "#1F3F37",
+      secondary: "#C98A3A",
+      accent: "#B8791F",
+      background: "#FAFAF8",
+      surface: "#F1EFEA",
+      text: "#161F1B",
+      muted: "#6B6F68",
+      border: "#E3E0D8",
+    },
+    fonts: {
+      heading: "manrope",
+      body: "inter",
+    },
+  },
+
+  expert: {
+    name: "Дарья Радченко",
+    role: "Веб-разработчик",
+    niche: "web-studio",
+    tagline: "Современные сайты, которые помогают получать клиентов",
+    bio: [
+      "Создаю современные цифровые решения для экспертов и малого бизнеса.",
+      "Веду каждый проект лично — от обсуждения задачи до запуска.",
+    ],
+    photo: "/images/studio-hero.jpg",
+    credentials: [
+      "Разработка сайтов под ключ",
+      "Опыт с Telegram Mini Apps и AI-инструментами",
+      "Работаю лично, от идеи до запуска",
+    ],
+  },
+
+  nav: [
+    { label: "Почему я", href: "#why-trust" },
+    { label: "Что можно заказать", href: "#services" },
+    { label: "Портфолио", href: "#portfolio" },
+    { label: "Как проходит работа", href: "#process" },
+    { label: "Обо мне", href: "#about" },
+    { label: "Связаться", href: "#contacts" },
+  ],
+
+  hero: {
+    eyebrow: "Сайты для экспертов и малого бизнеса",
+    headline: "Создаю современные сайты",
+    highlight: "для экспертов и малого бизнеса",
+    subheadline:
+      "Быстрые современные сайты, которые работают на ваш бизнес. При необходимости помогу с лид-магнитом, Telegram-ботом, рабочим пространством и другими цифровыми инструментами.",
+    ctaPrimaryText: "Обсудить проект",
+    ctaSecondaryText: "Посмотреть работы",
+    ctaSecondaryHref: "#portfolio",
+    image: "/images/studio-hero.jpg",
+    stats: [
+      { value: "10+", label: "реализованных проектов" },
+      { value: "6", label: "направлений работы" },
+      { value: "Лично", label: "веду каждый проект" },
+    ],
+  },
+
+  about: {
+    heading: "Обо мне",
+    subheading: "Дарья Радченко — веб-студия одного специалиста",
+    paragraphs: [
+      "Я создаю современные цифровые решения для экспертов и малого бизнеса.",
+      "Для меня важно сделать не просто красивый сайт, а инструмент, который помогает вам получать клиентов и экономить время.",
+      "Веду проект лично — от обсуждения задачи до запуска — и не передаю его в работу другим исполнителям.",
+    ],
+    photo: "/images/studio-about.jpg",
+    highlights: [
+      { icon: "Sparkles", text: "10+ реализованных проектов" },
+      { icon: "Target", text: "Разработка под вашу задачу" },
+      { icon: "ShieldCheck", text: "Личное участие от старта до запуска" },
+      { icon: "TrendingUp", text: "Можно развивать проект дальше" },
+    ],
+  },
+
+  services: {
+    heading: "Что можно заказать",
+    subheading: "Сайт — основа. Остальное можно подключить, когда будет нужно.",
+    items: [
+      {
+        title: "Разработка сайта",
+        description: "Современный сайт для эксперта или бизнеса.",
+        price: "от 35 000 ₽",
+        duration: "Срок — по договорённости",
+        features: [
+          "Адаптивный дизайн",
+          "Быстрая загрузка",
+          "Форма заявки",
+          "Базовая SEO-оптимизация",
+        ],
+        ctaText: "Обсудить проект",
+        highlighted: true,
+      },
+      {
+        title: "Лид-магнит",
+        description: "PDF, чек-лист, гайд или мини-книга для сбора заявок.",
+        price: "от 10 000 ₽",
+        duration: "Срок — по договорённости",
+        features: ["PDF-документ", "Чек-лист или гайд", "Мини-книга", "Оформление под ваш стиль"],
+        ctaText: "Обсудить проект",
+      },
+      {
+        title: "Контент для социальных сетей",
+        description: "Контент-план, Reels, карусели и цепляющие заголовки.",
+        price: "от 20 000 ₽",
+        duration: "Срок — по договорённости",
+        features: ["Контент-план", "Сценарии Reels", "Карусели", "Сильные заголовки"],
+        ctaText: "Обсудить проект",
+      },
+      {
+        title: "Telegram-бот",
+        description: "Запись клиентов, ответы на вопросы, выдача материалов.",
+        price: "от 20 000 ₽",
+        duration: "Срок — по договорённости",
+        features: ["Запись клиентов", "Ответы на частые вопросы", "Автоматическая выдача материалов"],
+        ctaText: "Обсудить проект",
+      },
+      {
+        title: "Рабочее пространство Notion",
+        description: "CRM для клиентов, финансов и задач в одном месте.",
+        price: "от 20 000 ₽",
+        duration: "Срок — по договорённости",
+        features: ["База клиентов", "Финансы", "Задачи и календарь"],
+        ctaText: "Обсудить проект",
+      },
+      {
+        title: "AI-сотрудники",
+        description: "Готовые цифровые помощники для экспертов.",
+        price: "от 2 990 ₽",
+        duration: "Срок — по договорённости",
+        features: [
+          "Настройка под вашу нишу",
+          "Экономия времени на рутине",
+          "Готов к работе за несколько дней",
+        ],
+        ctaText: "Обсудить проект",
+      },
+    ],
+    footnote: "Точную стоимость назову после обсуждения задачи.",
+  },
+
+  whyTrust: {
+    heading: "Почему стоит заказать сайт именно у меня",
+    subheading: "Что вы получаете вместе с сайтом",
+    items: [
+      {
+        icon: "Sparkles",
+        title: "Современный дизайн",
+        description: "Сайт выглядит актуально и вызывает доверие с первого экрана.",
+      },
+      {
+        icon: "Zap",
+        title: "Быстрая загрузка",
+        description: "Страницы открываются мгновенно — никто не уходит, не дождавшись загрузки.",
+      },
+      {
+        icon: "Smartphone",
+        title: "Отлично работает на телефоне",
+        description: "Адаптивная вёрстка для любых экранов — от телефона до десктопа.",
+      },
+      {
+        icon: "Compass",
+        title: "Простое управление",
+        description: "Вносить изменения в контент просто, без помощи программиста.",
+      },
+      {
+        icon: "Search",
+        title: "Базовая SEO-оптимизация",
+        description: "Сайт готов к тому, чтобы его находили в поиске.",
+      },
+      {
+        icon: "TrendingUp",
+        title: "Возможность легко развивать проект дальше",
+        description: "Можно постепенно добавлять новые инструменты и разделы.",
+      },
+    ],
+  },
+
+  comparison: {
+    heading: "Почему не Tilda?",
+    subheading: "Коротко о разнице между самописным сайтом и конструктором.",
+    ownSiteLabel: "Самописный сайт",
+    builderLabel: "Конструктор",
+    rows: [
+      {
+        label: "Абонентская плата",
+        ownSite: "Нет ежемесячной или ежегодной подписки",
+        builder: "Обычно требуется подписка",
+      },
+      {
+        label: "Контроль над проектом",
+        ownSite: "Полный контроль над проектом",
+        builder: "Возможности ограничены платформой",
+      },
+      {
+        label: "Скорость загрузки",
+        ownSite: "Высокая скорость загрузки",
+        builder: "Скорость зависит от конструктора",
+      },
+      {
+        label: "Гибкость в развитии",
+        ownSite: "Гибкость в развитии под любые задачи",
+        builder: "Некоторые функции ограничены",
+      },
+      {
+        label: "Доработки",
+        ownSite: "Можно дорабатывать под любые задачи",
+        builder: "Зависимость от возможностей платформы",
+      },
+    ],
+    footnote:
+      "Если пользоваться конструктором несколько лет, стоимость подписки постепенно становится ощутимой. Самописный сайт — это вложение один раз в собственный цифровой актив.",
+  },
+
+  portfolio: {
+    heading: "Реализованные решения",
+    subheading: "Какую задачу решил каждый проект",
+    items: [
+      {
+        icon: "Globe",
+        title: "Сайт для психолога",
+        category: "Сайт",
+        problem: "Нужен был современный сайт с записью на консультацию и понятной структурой услуг.",
+        description: "Разработала адаптивный сайт: услуги, отзывы и форма записи на консультацию.",
+        result: "Психолог получил сайт, который вызывает доверие с первого экрана.",
+        image: "/images/portfolio-psychologist-site.png",
+      },
+      {
+        icon: "Globe",
+        title: "Сайт для юриста",
+        category: "Сайт",
+        problem: "Нужен был сайт с понятной структурой услуг и акцентом на доверие.",
+        description: "Разработала сайт с чёткой подачей услуг и удобной формой обращения.",
+        result: "Юрист получил сайт, который сразу показывает экспертизу и вызывает доверие.",
+        image: "/images/portfolio-lawyer-site.png",
+      },
+      {
+        icon: "Bot",
+        title: "Теплица — цифровое пространство для женщин",
+        category: "Telegram Mini App",
+        problem: "Нужно было цифровое пространство, куда пользователи возвращаются регулярно.",
+        description:
+          "Разработала Telegram Mini App с личным кабинетом, системой материалов и удобной навигацией.",
+        result: "Пользователи регулярно взаимодействуют с контентом и возвращаются в приложение.",
+        image: "/images/portfolio-teplitsa.png",
+      },
+      {
+        icon: "Compass",
+        title: "«Сезон Души» — интерактивный тест",
+        category: "Веб",
+        problem: "Нужен был инструмент для вовлечения новой аудитории и сбора заявок.",
+        description: "Создала интерактивный тест с персональными результатами и рекомендациями.",
+        result: "Тест вовлекает новых пользователей и знакомит их с проектом.",
+        image: "/images/portfolio-sezon-dushi.png",
+      },
+      {
+        icon: "LayoutGrid",
+        title: "CRM в Notion для эксперта",
+        category: "CRM",
+        problem: "Рабочие процессы были разбросаны по десяткам таблиц и заметок.",
+        description: "Разработала CRM в Notion: клиентская база, задачи, финансы, календарь.",
+        result: "Все процессы собраны в одном месте — без хаоса в таблицах.",
+        image: "/images/portfolio-crm-notion.png",
+      },
+      {
+        icon: "Bot",
+        title: "Telegram-бот для экспертов",
+        category: "Telegram",
+        problem: "Эксперт тратил много времени, отвечая на одни и те же вопросы.",
+        description: "Разработала бота, который отвечает на частые вопросы и выдаёт материалы.",
+        result: "Эксперт экономит время, а клиенты быстрее получают нужную информацию.",
+      },
+      {
+        icon: "Brain",
+        title: "AI-помощник для социальных сетей",
+        category: "AI",
+        problem: "Нужно было готовить контент для соцсетей быстрее и без выгорания.",
+        description:
+          "Создала AI-ассистента для контент-планов, сценариев Reels, каруселей и заголовков.",
+        result: "Эксперт получает готовые идеи и контент в разы быстрее.",
+        image: "/images/portfolio-ai-social.png",
+      },
+      {
+        icon: "Brain",
+        title: "Онлайн-юрист по гражданскому праву",
+        category: "AI",
+        problem: "Людям нужны были быстрые ответы на типовые юридические вопросы.",
+        description:
+          "Разработала AI-помощника, который помогает разобраться в вопросах и подготовиться к консультации.",
+        result: "Клиенты быстрее получают ответы и понимают, какие документы готовить.",
+        image: "/images/portfolio-online-lawyer.png",
+      },
+      {
+        icon: "Brain",
+        title: "AI-планнер питания",
+        category: "AI",
+        problem: "Планирование меню и закупок отнимало много времени.",
+        description:
+          "Создала AI-помощника, который составляет меню и список покупок с учётом предпочтений семьи.",
+        result: "Экономия времени на планировании питания и организации закупок.",
+        image: "/images/portfolio-ai-nutrition.png",
+      },
+      {
+        icon: "Brain",
+        title: "AI-помощник по созданию книги",
+        category: "AI",
+        problem: "Нужен был помощник для структурирования и редактирования рукописи.",
+        description: "Создала AI-ассистента, который помогает готовить книгу к публикации.",
+        result: "Автор быстрее движется от рукописи к готовой книге.",
+      },
+    ],
+  },
+
+  process: {
+    heading: "Как проходит работа",
+    subheading: "Пять простых шагов от идеи до запуска",
+    steps: [
+      { title: "Обсуждаем задачу", description: "Разбираем цели проекта и что должен решать сайт." },
+      {
+        title: "Согласовываем структуру",
+        description: "Определяем разделы и логику сайта до начала разработки.",
+      },
+      { title: "Разрабатываю проект", description: "Собираю сайт: дизайн, вёрстку и наполнение." },
+      {
+        title: "Вы показываете замечания",
+        description: "Смотрите готовый вариант и присылаете правки.",
+      },
+      { title: "Запускаем", description: "Публикуем сайт и передаю вам все доступы." },
+    ],
+  },
+
+  addOns: {
+    heading: "Что можно добавить позже",
+    subheading: "После запуска сайта можно постепенно подключать:",
+    items: [
+      { icon: "FileText", label: "Лид-магнит" },
+      { icon: "Bot", label: "Telegram-бот" },
+      { icon: "Brain", label: "AI-сотрудники" },
+      { icon: "LayoutGrid", label: "Рабочее пространство" },
+      { icon: "Zap", label: "Автоматизация" },
+    ],
+  },
+
+  testimonials: {
+    heading: "Отзывы",
+    subheading: "",
+    items: [],
+  },
+
+  faq: {
+    heading: "Частые вопросы",
+    subheading: "Если не нашли ответ — напишите напрямую",
+    items: [
+      {
+        question: "Сколько стоит сайт?",
+        answer:
+          "Зависит от задач и объёма. Разработка сайта — от 35 000 ₽, точную стоимость называю после обсуждения проекта.",
+      },
+      {
+        question: "Сколько времени занимает разработка?",
+        answer:
+          "Срок обсуждаем индивидуально — зависит от объёма и скорости согласования материалов с вашей стороны.",
+      },
+      {
+        question: "Нужно ли платить за сайт каждый месяц?",
+        answer:
+          "Нет. Разработка оплачивается один раз, сайт остаётся вашим. Отдельно оплачиваются только домен и хостинг — небольшие ежегодные расходы, а не абонентская плата за конструктор.",
+      },
+      {
+        question: "Можно ли будет дорабатывать сайт после запуска?",
+        answer:
+          "Да, сайт легко развивать: можно добавить лид-магнит, Telegram-бота, рабочее пространство или другие инструменты.",
+      },
+      {
+        question: "Как проходит оплата?",
+        answer:
+          "Обычно предоплата на старте и остаток после согласования результата. Детали обсуждаем перед началом работы.",
+      },
+    ],
+  },
+
+  finalCta: {
+    heading: "Готовы обсудить ваш сайт?",
+    subheading: "Расскажите о задаче — отвечу лично и предложу решение.",
+    ctaText: "Обсудить проект",
+    secondaryText: "Отвечаю лично, обычно в течение дня",
+  },
+
+  contacts: {
+    heading: "Контакты",
+    subheading: "Расскажите о задаче — отвечу лично",
+    email: "Darya734@yandex.ru",
+    phone: "+7 (909) 814-93-73",
+    city: "Амурская область, г. Благовещенск",
+    telegram: "https://t.me/dashatulula",
+    whatsapp: "",
+    max: "tel:+79098149373",
+    workingHours: "Пн–Пт, 10:00–19:00",
+    consentLabel: "Я согласен(а) на обработку персональных данных в соответствии с Политикой конфиденциальности",
+  },
+
+  footer: {
+    description: "Разработка сайтов и цифровых инструментов для экспертов и малого бизнеса.",
+    links: [
+      { label: "Обо мне", href: "#about" },
+      { label: "Портфолио", href: "#portfolio" },
+      { label: "Вопросы", href: "#faq" },
+      { label: "Связаться", href: "#contacts" },
+    ],
+    legalName: "Дарья Радченко",
+  },
+
+  seo: {
+    title: "Дарья Радченко — разработка сайтов для экспертов и малого бизнеса",
+    description:
+      "Современные сайты под ключ для экспертов и малого бизнеса: быстрая загрузка, адаптивный дизайн, простое управление. Работаю лично, от идеи до запуска.",
+    keywords: [
+      "разработка сайтов",
+      "сайт для эксперта",
+      "сайт под ключ",
+      "лендинг для бизнеса",
+      "веб-студия",
+      "сайт вместо конструктора",
+    ],
+    siteUrl: "https://daryaradchenko.ru",
+    ogImage: "/images/og-cover.jpg",
+    locale: "ru_RU",
+    themeColor: "#2F5D50",
+  },
+
+  legal: {
+    entityType: "self-employed",
+    entityLabel: "Самозанятая",
+    entityName: "Радченко Дарья",
+    inn: "282514212660",
+    registrationAddress: "Амурская область, г. Благовещенск",
+    effectiveDate: "2026-08-04",
+    disclaimer: "Информация на сайте носит информационный характер и не является публичной офертой.",
+  },
+
+  // Custom flow: lead with trust/value, then price, then proof, then process,
+  // then upsell, then the personal "about" — matches how this niche's own
+  // brief wants the page to read. Doesn't touch the default order every
+  // other niche relies on (see `SectionKey`/`pageOrder` in types/config.ts).
+  pageOrder: [
+    "hero",
+    "whyTrust",
+    "comparison",
+    "services",
+    "portfolio",
+    "process",
+    "addOns",
+    "about",
+    "faq",
+    "finalCta",
+    "contacts",
+  ],
+};
+
+export default studioConfig;
